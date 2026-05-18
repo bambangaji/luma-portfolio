@@ -1,0 +1,25 @@
+import { createBrowserRouter } from "react-router-dom"
+import App from "../App"
+import HomePage from "../pages/home"
+import AboutPage from "../pages/about"
+import NotFoundPage from "../pages/not-found"
+import SearchPage from "../pages/searching-page"
+import ItemDetailPage from "../pages/item/item-detail-page"
+import WhatsappPages from "../pages/whatsapp/whatsapp-page"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { index: true, element: <HomePage/> },
+      { path: "about", element: <AboutPage /> },
+      { path: "*", element: <NotFoundPage /> },
+      { path: "search", element: <SearchPage /> },
+      { path: "whatsapp", element: <WhatsappPages /> },
+      { path: "product/:id", element: <ItemDetailPage /> },
+    ],
+  },
+])
+
+export default router
