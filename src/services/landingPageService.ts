@@ -5,6 +5,7 @@ import type {
   ContactItem,
   Experience,
   Hero,
+  PersonalInformation,
   Project,
   Skills,
 } from '../models/landingPageModel';
@@ -16,6 +17,7 @@ interface LandingPageData {
   hero: Hero;
   contacts: ContactItem[];
   skills: Skills;
+  personal_information: PersonalInformation;
 }
 
 const landingPageData = data as LandingPageData;
@@ -60,5 +62,9 @@ export class LandingPageService {
 
   static getSkills(): Skills {
     return landingPageData.skills;
+  }
+
+  static getPersonalInformation(): PersonalInformation {
+    return landingPageData.personal_information;
   }
 }

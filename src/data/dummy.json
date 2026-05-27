@@ -109,7 +109,7 @@
             ],
             "metrics": "Improved PDF performance",
             "category": "Web Application",
-            "url": null,
+            "url": "https://khastara.perpusnas.go.id/",
             "thumbnail": null
         },
         {
@@ -164,6 +164,7 @@
         }
     ],
     "abouts": {
+        "full_name": "Bambang Aji Pratama",
         "tagline": "Building scalable enterprise applications and intelligent digital solutions with modern technologies.",
         "headline": "Turning Ideas into Scalable Digital Products",
         "description": "Full Stack Engineer with 6+ years of experience designing, developing, and optimizing enterprise-scale applications using Angular, Spring Boot, React, and modern web technologies. Experienced in AI workflow automation, frontend architecture, and enterprise system integration.",
@@ -177,12 +178,35 @@
             "API Integration",
             "Cloud & DevOps"
         ],
-        "education": {
-            "degree": "Bachelor’s Degree",
-            "field": "Informatics Engineering",
-            "university": "Universitas Satya Negara Indonesia",
-            "graduationYear": 2020
-        }
+        "education": [
+            {
+                "degree": "Bachelor of Informatics Technology",
+                "institution": "Universitas Satya Negara Indonesia",
+                "start_date": "2016-07",
+                "end_date": "2020-09",
+                "gpa": 3.37,
+                "projects": [
+                    {
+                        "name": "Pre-order Android Application",
+                        "technologies": [
+                            "Flutter"
+                        ]
+                    }
+                ],
+                "certifications": [
+                    {
+                        "name": "Google Mobile Web Specialist",
+                        "year": 2018,
+                        "description": "Certification in responsive web design and mobile web development"
+                    },
+                    {
+                        "name": "TOEFL",
+                        "year": 2020,
+                        "description": "certification with a score of 550"
+                    }
+                ]
+            }
+        ]
     },
     "contacts": [
         {
@@ -330,5 +354,19 @@
                 ]
             }
         ]
+    },
+    "personal_information": {
+        "full_name": "Bambang Aji Pangestu",
+        "location": {
+            "city": "Depok",
+            "province": "West Java",
+            "country": "Indonesia"
+        },
+        "email": "bambangaji101@gmail.com",
+        "phone": "+6289644560019",
+        "linkedin": "https://linkedin.com/in/bambang-aji-p-06371b194",
+        "github": "https://github.com/bambangaji",
+        "portfolio": "https://bambang-aji-pangestu.vercel.app",
+        "image": "/profile.png"
     }
 }

@@ -18,19 +18,12 @@ export interface Project {
   thumbnail: string | null;
 }
 
-export interface Education {
-  degree: string;
-  field: string;
-  university: string;
-  graduationYear: number;
-}
-
 export interface About {
   tagline: string;
   headline: string;
   description: string;
   expertise: string[];
-  education: Education;
+  education: Education[];
 }
 
 export interface HeroTitle {
@@ -108,3 +101,42 @@ export type ContactType =
   | 'linkedin'
   | 'github'
   | 'resume';
+
+  export interface Location {
+  city: string;
+  province: string;
+  country: string;
+}
+
+export interface PersonalInformation {
+  full_name: string;
+  location: Location;
+  email: string;
+  phone: string;
+  linkedin: string;
+  github: string;
+  portfolio: string;
+  image: string;
+}
+export interface Certification {
+  name: string;
+  year: number;
+  description: string;
+}
+
+export interface EducationProject {
+  name: string;
+  technologies: string[];
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  start_date: string;
+  end_date: string;
+  gpa: number;
+
+  projects: EducationProject[];
+
+  certifications: Certification[];
+}

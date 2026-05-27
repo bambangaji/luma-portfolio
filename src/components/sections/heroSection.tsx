@@ -62,7 +62,15 @@ export const HeroSection = () => {
       {/* Content */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 mx-auto max-w-4xl px-6 text-center"
+        className="
+    relative z-10 mx-auto max-w-4xl
+    px-6 text-center
+
+    pt-28 pb-16
+
+    sm:pt-32
+    md:pt-20 md:pb-0
+  "
       >
         {/* Badge */}
         <motion.div

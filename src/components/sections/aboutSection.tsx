@@ -1,227 +1,413 @@
 import { motion } from 'framer-motion';
+
+import {
+  Award,
+  Calendar,
+  GraduationCap,
+  MapPin,
+} from 'lucide-react';
+
 import { SectionTitle } from './sectionTitle';
+
 import { LandingPageService } from '../../services/landingPageService';
 
 export const AboutSection = () => {
-  const summary = LandingPageService.getAbout();
+  const about = LandingPageService.getAbout();
+
+  const personalInformation =
+    LandingPageService.getPersonalInformation();
+
+  const education = about.education[0];
 
   return (
     <section
       id="about"
       className="
+        relative overflow-hidden
         bg-white py-24
         transition-colors duration-300
-        dark:bg-gray-900
+        dark:bg-gray-950
       "
     >
-      <div className="mx-auto max-w-7xl px-6">
+      {/* Background Glow */}
+      <div
+        className="
+          absolute left-1/2 top-0
+          h-[500px] w-[500px]
+          -translate-x-1/2
+          rounded-full
+          bg-violet-500/10
+          blur-3xl
+        "
+      />
+
+      <div className="relative mx-auto max-w-7xl px-6">
         <SectionTitle
           title="About Me"
-          subtitle={summary.tagline}
+          subtitle={about.tagline}
         />
 
-        <div className="grid items-center gap-12 md:grid-cols-2">
-          {/* Left Visual */}
+        <div
+          className="
+            grid items-center gap-16
+            lg:grid-cols-2
+          "
+        >
+          {/* LEFT SIDE */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{
+              opacity: 0,
+              x: -40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div
-              className="
-                aspect-square overflow-hidden rounded-2xl
-                bg-gradient-to-br
-                from-violet-100 to-cyan-100
-                dark:bg-gray-800
-              "
-            >
-              <div className="flex h-full w-full items-center justify-center">
-                <svg
-                  className="
-                    h-64 w-64
-                    text-violet-500 dark:text-violet-400
-                  "
-                  viewBox="0 0 200 200"
-                  fill="none"
-                >
-                  <motion.circle
-                    cx="100"
-                    cy="100"
-                    r="80"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeDasharray="5 5"
-                    animate={{ rotate: 360 }}
-                    transition={{
-                      duration: 20,
-                      repeat: Infinity,
-                      ease: 'linear',
-                    }}
-                  />
-
-                  <motion.circle
-                    cx="100"
-                    cy="100"
-                    r="60"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeDasharray="3 3"
-                    animate={{ rotate: -360 }}
-                    transition={{
-                      duration: 15,
-                      repeat: Infinity,
-                      ease: 'linear',
-                    }}
-                  />
-
-                  <motion.circle
-                    cx="100"
-                    cy="100"
-                    r="40"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                    }}
-                  />
-
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="20"
-                    fill="currentColor"
-                    opacity="0.3"
-                  />
-
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="8"
-                    fill="currentColor"
-                  />
-
-                  {Array.from({ length: 8 }).map((_, i) => (
-                    <motion.circle
-                      key={i}
-                      cx={
-                        100 +
-                        80 *
-                          Math.cos(
-                            (i * Math.PI * 2) / 8
-                          )
-                      }
-                      cy={
-                        100 +
-                        80 *
-                          Math.sin(
-                            (i * Math.PI * 2) / 8
-                          )
-                      }
-                      r="4"
-                      fill="currentColor"
-                      animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.3, 0.7, 0.3],
-                      }}
-                      transition={{
-                        duration: 2,
-                        delay: i * 0.2,
-                        repeat: Infinity,
-                      }}
-                    />
-                  ))}
-                </svg>
-              </div>
-            </div>
-
-            {/* Floating Card */}
+            {/* Profile Card */}
             <motion.div
-              className="
-                absolute -bottom-4 -right-4
-                rounded-xl border p-6 shadow-xl
-
-                border-gray-100 bg-white
-                dark:border-gray-700 dark:bg-gray-800
-              "
-              animate={{ y: [0, -5, 0] }}
+              animate={{
+                y: [0, -8, 0],
+              }}
               transition={{
-                duration: 3,
+                duration: 5,
                 repeat: Infinity,
               }}
-            >
-              <div
-                className="
-                  bg-gradient-to-r
-                  from-violet-500 to-cyan-400
-                  bg-clip-text text-2xl font-bold text-transparent
-                "
-              >
-                {summary.education.degree}
-              </div>
-
-              <div
-                className="
-                  text-sm
-                  text-gray-500 dark:text-gray-400
-                "
-              >
-                {summary.education.field}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h3
               className="
-                text-2xl font-bold
-                text-slate-900 dark:text-white
+                relative overflow-hidden rounded-3xl
+
+                border border-gray-200
+
+                bg-gradient-to-br
+                from-violet-50 via-white to-cyan-50
+
+                p-4 shadow-2xl
+
+                dark:border-gray-800
+                dark:from-gray-900
+                dark:via-gray-900
+                dark:to-black
               "
             >
-              {summary.headline}
-            </h3>
+              {/* Glow */}
+              <div
+                className="
+                  absolute left-1/2 top-1/2
+                  h-72 w-72
+                  -translate-x-1/2 -translate-y-1/2
+                  rounded-full
+                  bg-violet-500/20 blur-3xl
+                "
+              />
 
-            <p
-              className="
-                text-lg leading-relaxed
-                text-slate-600 dark:text-slate-400
-              "
-            >
-              {summary.description}
-            </p>
+              {/* Profile Image */}
+              <div className="relative z-10 overflow-hidden rounded-3xl">
+                <img
+                  src={personalInformation.image}
+                  alt={personalInformation.full_name}
+                  className="
+                  grayscale
+                    h-[520px] w-full
+                    object-cover
+                  "
+                />
+              </div>
 
-            {/* Skills */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {summary.expertise.map((skill) => (
-                <div
-                  key={skill}
-                  className="flex items-center gap-2"
-                >
-                  <div
+              {/* Floating Education Card */}
+              <motion.div
+                animate={{
+                  y: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                }}
+                className="
+                  absolute bottom-8 right-8
+                  max-w-[280px]
+                  z-[999]
+                  rounded-2xl border
+                  border-white/20
+
+                  bg-white/80 p-5
+                  shadow-2xl
+                  backdrop-blur-xl
+
+                  dark:bg-gray-900/80
+                "
+              >
+                <div className="mb-3 flex items-center gap-2">
+                  <GraduationCap
                     className="
-                      h-2 w-2 rounded-full
-                      bg-gradient-to-r
-                      from-violet-500 to-cyan-400
+                      h-5 w-5
+                      text-violet-600 dark:text-cyan-400
                     "
                   />
 
                   <span
                     className="
-                      text-slate-700 dark:text-slate-300
+                      text-sm font-medium
+                      text-slate-500 dark:text-slate-400
                     "
                   >
-                    {skill}
+                    Degree
                   </span>
                 </div>
-              ))}
+
+                <div
+                  className="
+                    text-lg font-semibold
+                    text-slate-900 dark:text-white
+                  "
+                >
+                  {education.degree}
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT SIDE */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{ once: true }}
+            className="space-y-10"
+          >
+            {/* Headline */}
+            <div>
+              <h3
+                className="
+                  mb-5 text-4xl font-bold leading-tight
+                  text-slate-900 dark:text-white
+                "
+              >
+                Profile
+              </h3>
+
+              <p
+                className="
+                  text-lg leading-relaxed
+                  text-slate-600 dark:text-slate-400
+                "
+              >
+                <span
+                  className="
+                    font-semibold
+                    text-slate-900 dark:text-white
+                  "
+                >
+                  {personalInformation.full_name}
+                </span>{' '}
+                — {about.description}
+              </p>
+            </div>
+
+            {/* Information Cards */}
+            <div
+              className="
+                 gap-4
+                sm:grid-cols-2
+              "
+            >
+              {/* Education */}
+              <div
+                className="
+                  rounded-2xl border
+                  border-gray-200
+                  bg-gray-50
+
+                  p-5
+
+                  dark:border-gray-800
+                  dark:bg-gray-900
+                "
+              >
+
+                <div className="mb-4 flex items-center gap-3">
+                  <div
+                    className="
+                      rounded-xl p-2
+
+                      bg-violet-100
+                      dark:bg-violet-500/10
+                    "
+                  >
+                    <GraduationCap
+                      className="
+                        h-5 w-5
+                        text-violet-600 dark:text-cyan-400
+                      "
+                    />
+                  </div>
+
+                  <div
+                    className="
+                      text-sm font-medium
+                      text-slate-500 dark:text-slate-400
+                    "
+                  >
+                    Education
+                  </div>
+                </div>
+
+                {/* Degree */}
+                <div
+                  className="
+                    text-lg font-bold leading-snug
+                    text-slate-900 dark:text-white
+                  "
+                >
+                  {education.degree}
+                </div>
+
+                {/* Institution */}
+                <div
+                  className="
+                    mt-1 text-sm
+                    text-slate-600 dark:text-slate-400
+                  "
+                >
+                  {education.institution}
+                </div>
+
+                {/* Date */}
+                <div
+                  className="
+                    mt-4 flex items-center gap-2
+                    text-xs
+                  
+                  "
+                >
+                  <Calendar className="h-3.5 w-3.5" />
+
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {education.start_date} —{' '}
+                    {education.end_date}
+                  </span>
+                </div>
+
+                {/* GPA */}
+                <div
+                  className="
+                    mt-3 inline-flex rounded-full
+
+                    bg-violet-100
+                    px-3 py-1
+
+                    text-xs font-medium
+                    text-violet-700
+
+                    dark:bg-violet-500/10
+                    dark:text-violet-300
+                  "
+                >
+                  GPA {education.gpa}
+                </div>
+              </div>
+            </div>
+
+            {/* Certifications */}
+            <div>
+              <div
+                className="
+                  mb-5 flex items-center gap-2
+                "
+              >
+                <Award
+                  className="
+                    h-5 w-5
+                    text-violet-600 dark:text-cyan-400
+                  "
+                />
+
+                <h4
+                  className="
+                    text-lg font-semibold
+                    text-slate-900 dark:text-white
+                  "
+                >
+                  Certifications
+                </h4>
+              </div>
+
+              <div className="space-y-4">
+                {education.certifications.map(
+                  (certification) => (
+                    <motion.div
+                      key={certification.name}
+                      whileHover={{
+                        y: -2,
+                      }}
+                      className="
+                        rounded-2xl border
+
+                        border-gray-200
+                        bg-gray-50
+
+                        p-5
+
+                        transition-all duration-300
+
+                        hover:border-violet-300
+                        hover:shadow-lg
+
+                        dark:border-gray-800
+                        dark:bg-gray-900
+                        dark:hover:border-violet-500/30
+                      "
+                    >
+                      <div
+                        className="
+                          mb-2 flex items-center justify-between
+                        "
+                      >
+                        <h5
+                          className="
+                            font-semibold
+                            text-slate-900 dark:text-white
+                          "
+                        >
+                          {certification.name}
+                        </h5>
+
+                        <span
+                          className="
+                            rounded-full
+
+                            bg-violet-100
+                            px-3 py-1
+
+                            text-xs font-medium
+                            text-violet-700
+
+                            dark:bg-violet-500/10
+                            dark:text-violet-300
+                          "
+                        >
+                          {certification.year}
+                        </span>
+                      </div>
+
+                      <p
+                        className="
+                          text-sm leading-relaxed
+                          text-slate-600 dark:text-slate-400
+                        "
+                      >
+                        {certification.description}
+                      </p>
+                    </motion.div>
+                  )
+                )}
+              </div>
             </div>
           </motion.div>
         </div>
