@@ -1,4 +1,4 @@
-export default function SectionHeader() {
+export const SectionHeader = () => {
   return (
     <section className="py-0 flex items-center justify-center">
       <div className="text-center">

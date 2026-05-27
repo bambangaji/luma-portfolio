@@ -1,24 +1,9 @@
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Moon, Sun } from "lucide-react"; // npm install lucide-react
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "../hooks/useTheme";
 
 export default function Navbar() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
-  useEffect(() => {
-    // Apply theme class to <html>
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
-
+  const [theme, toggleTheme] = useTheme();
   const links = [
     { name: "Beranda", href: "/" },
     { name: "Pencarian", href: "/search" },
@@ -48,7 +33,7 @@ export default function Navbar() {
 
       {/* Theme toggle button */}
       <button
-        onClick={toggleTheme}
+        onClick={() => (typeof toggleTheme === "function" ? toggleTheme() : undefined)}
         className="p-2 rounded-full border border-gray-500 hover:bg-gray-700 transition-all duration-200"
         title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
       >
@@ -61,3 +46,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

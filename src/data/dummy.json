@@ -1,0 +1,334 @@
+{
+    "experiences": [
+        {
+            "id": "1",
+            "role": "Mobile Developer",
+            "company": "PT Asuransi Jiwa Astra",
+            "period": "2025 - Present",
+            "description": [
+                "Implemented SDX integration methods.",
+                "Improved synchronization efficiency by 20%.",
+                "Participated in sprint planning and retrospectives.",
+                "Refactored legacy data structures."
+            ]
+        },
+        {
+            "id": "2",
+            "role": "IT Developer",
+            "company": "PT Sompo Insurance",
+            "period": "2025",
+            "description": [
+                "Refactored 7000+ line Angular legacy codebase.",
+                "Created reusable UI components.",
+                "Integrated Spring Boot APIs.",
+                "Built dynamic UI rendering system.",
+                "Led small frontend team."
+            ]
+        },
+        {
+            "id": "3",
+            "role": "Front End Engineer",
+            "company": "PT Bank Danamon Indonesia Tbk",
+            "period": "2024 - 2025",
+            "description": [
+                "Developed live video call feature.",
+                "Migrated Angular 11 project to Angular 19.",
+                "Built modular microsite architecture.",
+                "Performed SQL audit analysis.",
+                "Improved team collaboration by 30%."
+            ]
+        },
+        {
+            "id": "4",
+            "role": "Mobile Developer",
+            "company": "PT Asuransi Jiwa Astra",
+            "period": "2023 - 2024",
+            "description": [
+                "Developed DOKU payment integration.",
+                "Integrated Bank BJJ features.",
+                "Implemented SDX synchronization methods."
+            ]
+        },
+        {
+            "id": "5",
+            "role": "Front End Web Engineer",
+            "company": "PT Rpay Finansial Digital Indonesia",
+            "period": "2023",
+            "description": [
+                "Developed Vue.js back office system.",
+                "Created Excel-to-image compression feature.",
+                "Integrated external APIs.",
+                "Improved development workflow."
+            ]
+        },
+        {
+            "id": "6",
+            "role": "Front End Engineer",
+            "company": "PT REDPHOENIX KREATIF DIGITAL",
+            "period": "2021 - 2022",
+            "description": [
+                "Created reusable app skeleton.",
+                "Built digital e-materai application.",
+                "Created SRS documentation.",
+                "Implemented SDX orchestration."
+            ]
+        },
+        {
+            "id": "7",
+            "role": "Software Engineer",
+            "company": "PT WISATECH",
+            "period": "2021",
+            "description": [
+                "Integrated Zoom and Moodle systems.",
+                "Created education APIs.",
+                "Built scheduler feature.",
+                "Resolved security vulnerabilities."
+            ]
+        },
+        {
+            "id": "8",
+            "role": "Front End Engineer",
+            "company": "PT MEEBER",
+            "period": "2019 - 2020",
+            "description": [
+                "Developed reservation and home cooking features.",
+                "Integrated APIs.",
+                "Created synchronization mechanisms."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "id": "1",
+            "title": "Khastara",
+            "description": "Enterprise web application focused on PDF viewer optimization and agile sprint execution.",
+            "tags": [
+                "Angular",
+                "Jira",
+                "PDF Viewer"
+            ],
+            "metrics": "Improved PDF performance",
+            "category": "Web Application",
+            "url": null,
+            "thumbnail": null
+        },
+        {
+            "id": "2",
+            "title": "Christine Monteiro Website",
+            "description": "Responsive corporate website with modern branding and optimized user experience.",
+            "tags": [
+                "WordPress",
+                "Elementor",
+                "ThemeForest"
+            ],
+            "metrics": "Responsive Corporate Website",
+            "category": "Frontend Development",
+            "url": "https://christinemonteiro.com/",
+            "thumbnail": null
+        },
+        {
+            "id": "3",
+            "title": "Vue.js Back Office System",
+            "description": "Enterprise back office system with API integrations and image compression features.",
+            "tags": [
+                "Vue.js",
+                "MVC",
+                "API Integration"
+            ],
+            "metrics": "Enterprise Workflow Optimization",
+            "category": "Service & API",
+            "url": null,
+            "thumbnail": null
+        }
+    ],
+    "skills_category": [
+        {
+            "name": "Frontend Engineering",
+            "code": "001"
+        },
+        {
+            "name": "Backend Development",
+            "code": "002"
+        },
+        {
+            "name": "AI Workflow Automation",
+            "code": "003"
+        },
+        {
+            "name": "Cloud & DevOps",
+            "code": "004"
+        },
+        {
+            "name": "Mobile Development",
+            "code": "005"
+        }
+    ],
+    "abouts": {
+        "tagline": "Building scalable enterprise applications and intelligent digital solutions with modern technologies.",
+        "headline": "Turning Ideas into Scalable Digital Products",
+        "description": "Full Stack Engineer with 6+ years of experience designing, developing, and optimizing enterprise-scale applications using Angular, Spring Boot, React, and modern web technologies. Experienced in AI workflow automation, frontend architecture, and enterprise system integration.",
+        "expertise": [
+            "Angular",
+            "React.js",
+            "Spring Boot",
+            "Vue.js",
+            "Flutter",
+            "AI Workflow Automation",
+            "API Integration",
+            "Cloud & DevOps"
+        ],
+        "education": {
+            "degree": "Bachelor’s Degree",
+            "field": "Informatics Engineering",
+            "university": "Universitas Satya Negara Indonesia",
+            "graduationYear": 2020
+        }
+    },
+    "contacts": [
+        {
+            "type": "email",
+            "value": "bambangaji101@gmail.com",
+            "url": "mailto:bambangaji101@gmail.com"
+        },
+        {
+            "type": "whatsapp",
+            "value": "+6289644560019",
+            "url": "https://wa.me/6289644560019"
+        },
+        {
+            "type": "linkedin",
+            "value": "linkedin.com/,in/bambang-aji-p-06371b194",
+            "url": "https://linkedin.com/in/bambang-aji-p-06371b194"
+        },
+        {
+            "type": "github",
+            "value": "github.com/bambangaji",
+            "url": "https://github.com/bambangaji"
+        },
+        {
+            "type": "resume",
+            "value": "Download CV",
+            "url": "/resume.pdf"
+        }
+    ],
+    "hero": {
+        "badge": "🚀 Full Stack Engineer & AI Workflow Enthusiast",
+        "title": {
+            "prefix": "Building Scalable",
+            "highlight": "Digital Experiences"
+        },
+        "description": "Full Stack Engineer experienced in building enterprise applications, modern web platforms, and intelligent workflow solutions using scalable technologies and modern development practices.",
+        "stats": [
+            {
+                "value": "8+",
+                "label": "Companies"
+            },
+            {
+                "value": "10+",
+                "label": "Projects"
+            },
+            {
+                "value": "5+",
+                "label": "Years Experience"
+            }
+        ]
+    },
+    "category_project": [
+        {
+            "name": "Web Application",
+            "code": "001"
+        },
+        {
+            "name": "Service & API",
+            "code": "002"
+        },
+        {
+            "name": "AI Workflow Automation",
+            "code": "003"
+        },
+        {
+            "name": "Cloud & DevOps",
+            "code": "004"
+        },
+        {
+            "name": "Mobile Application",
+            "code": "005"
+        }
+    ],
+    "skills": {
+        "title": "Skills & Expertise",
+        "subtitle": "A comprehensive toolkit for building scalable enterprise applications, AI workflows, and modern digital experiences",
+        "categories": [
+            {
+                "category": "Frontend Development",
+                "level": 92,
+                "items": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "TypeScript",
+                    "Vue.js",
+                    "AngularJS",
+                    "Angular",
+                    "React.js",
+                    "Flutter",
+                    "Ionic",
+                    "Kotlin Compose"
+                ]
+            },
+            {
+                "category": "Backend Development",
+                "level": 78,
+                "items": [
+                    "PHP",
+                    "Go",
+                    ".NET",
+                    "Spring Boot"
+                ]
+            },
+            {
+                "category": "Database",
+                "level": 80,
+                "items": [
+                    "PostgreSQL",
+                    "Firebase",
+                    "MySQL",
+                    "SQL Server",
+                    "MariaDB"
+                ]
+            },
+            {
+                "category": "AI & Automation",
+                "level": 68,
+                "items": [
+                    "AI Workflow Automation (n8n)",
+                    "LLaMA Model Integration",
+                    "API Integration"
+                ]
+            },
+            {
+                "category": "Cloud & DevOps",
+                "level": 72,
+                "items": [
+                    "GitHub",
+                    "GitLab",
+                    "Jenkins",
+                    "Bitbucket",
+                    "AWS",
+                    "Google Cloud Platform",
+                    "SSH",
+                    "CI/CD"
+                ]
+            },
+            {
+                "category": "Documentation & Analysis",
+                "level": 76,
+                "items": [
+                    "Software Requirements Specification",
+                    "Technical Documentation",
+                    "Business Requirement Analysis"
+                ]
+            }
+        ]
+    }
+}

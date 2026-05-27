@@ -1,0 +1,361 @@
+{
+  "personal_information": {
+    "full_name": "Bambang Aji Pangestu",
+    "location": {
+      "city": "Depok",
+      "province": "West Java",
+      "country": "Indonesia"
+    },
+    "email": "bambangaji101@gmail.com",
+    "phone": "+6289644560019",
+    "linkedin": "https://linkedin.com/in/bambang-aji-p-06371b194",
+    "github": "https://github.com/bambangaji",
+    "portfolio": "https://bambang-aji-pangestu.vercel.app"
+  },
+  "summary": {
+    "title": "Full Stack Engineer",
+    "years_of_experience": 6,
+    "description": "Full Stack Engineer with 6+ years of experience designing, developing, and optimizing enterprise-scale applications using Angular, Spring Boot, and modern web technologies."
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Informatics Technology",
+      "institution": "Universitas Satya Negara Indonesia",
+      "start_date": "2016-07",
+      "end_date": "2020-09",
+      "gpa": 3.37,
+      "projects": [
+        {
+          "name": "Pre-order Android Application",
+          "technologies": ["Flutter"]
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "backend": [
+      "PHP",
+      "Go",
+      ".NET",
+      "Spring Boot"
+    ],
+    "frontend": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Vue.js",
+      "AngularJS",
+      "Angular",
+      "Flutter",
+      "Ionic",
+      "React.js",
+      "Kotlin Compose"
+    ],
+    "database": [
+      "PostgreSQL",
+      "Firebase",
+      "MySQL",
+      "SQL Server",
+      "MariaDB"
+    ],
+    "ai": [
+      "AI Workflow Automation (n8n)",
+      "LLaMA Model Integration",
+      "API Integration"
+    ],
+    "devops": [
+      "GitHub",
+      "GitLab",
+      "Jenkins",
+      "Bitbucket",
+      "AWS",
+      "Google Cloud Platform",
+      "SSH",
+      "CI/CD"
+    ],
+    "documentation": [
+      "Software Requirements Specification",
+      "Technical Documentation",
+      "Business Requirement Analysis"
+    ]
+  },
+  "certifications": [
+    {
+      "name": "Internet of Things by Google",
+      "date": "2019-04"
+    },
+    {
+      "name": "Mobile Web Specialist by Google",
+      "date": "2018-06"
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "level": "Fluent"
+    },
+    {
+      "name": "Indonesia",
+      "level": "Native"
+    }
+  ],
+  "projects": [
+    {
+      "id": "khastara",
+      "name": "Khastara",
+      "type": "Enterprise Application",
+      "role": "Front End Engineer",
+      "company": "Khastara",
+      "status": "completed",
+      "start_date": "2024-10",
+      "end_date": "2025-01",
+      "url": null,
+      "github_url": null,
+      "thumbnail": null,
+      "technologies": [
+        "Angular",
+        "Jira",
+        "PDF Viewer"
+      ],
+      "features": [
+        "PDF Viewer Optimization",
+        "Agile Sprint Management",
+        "Bug Tracking",
+        "Feature Backlog"
+      ],
+      "responsibilities": [
+        "Led Front-End Agile sprint execution using Jira",
+        "Improved PDF viewer functionality and performance",
+        "Collected and transformed requirements into Jira backlog",
+        "Diagnosed and resolved application bugs"
+      ]
+    },
+    {
+      "id": "christine-monteiro",
+      "name": "Christine Monteiro Website",
+      "type": "Corporate Website",
+      "role": "Frontend Developer",
+      "company": "Christine Monteiro",
+      "status": "completed",
+      "start_date": "2024-01",
+      "end_date": "2024-03",
+      "url": "https://christinemonteiro.com/",
+      "github_url": null,
+      "thumbnail": null,
+      "technologies": [
+        "WordPress",
+        "Elementor",
+        "ThemeForest"
+      ],
+      "features": [
+        "Responsive Design",
+        "Corporate Branding",
+        "Custom WordPress Theme"
+      ],
+      "responsibilities": [
+        "Developed responsive corporate website",
+        "Customized ThemeForest template",
+        "Improved branding and user experience"
+      ]
+    },
+    {
+      "id": "corporate-web-profile",
+      "name": "Corporate Web Profile",
+      "type": "Company Website",
+      "role": "Frontend Developer",
+      "company": null,
+      "status": "completed",
+      "start_date": "2023-05",
+      "end_date": "2023-08",
+      "url": null,
+      "github_url": null,
+      "thumbnail": null,
+      "technologies": [
+        "WordPress",
+        "Elementor",
+        "ThemeForest"
+      ],
+      "features": [
+        "Company Profile",
+        "Responsive Layout"
+      ],
+      "responsibilities": [
+        "Developed corporate profile website",
+        "Customized premium WordPress theme"
+      ]
+    },
+    {
+      "id": "rusunami-web-apartment",
+      "name": "Rusunami Web Apartment",
+      "type": "Property Website",
+      "role": "Frontend Developer",
+      "company": null,
+      "status": "completed",
+      "start_date": "2023-02",
+      "end_date": "2023-04",
+      "url": null,
+      "github_url": null,
+      "thumbnail": null,
+      "technologies": [
+        "WordPress",
+        "Elementor",
+        "ThemeForest"
+      ],
+      "features": [
+        "Apartment Showcase",
+        "Responsive Property Layout"
+      ],
+      "responsibilities": [
+        "Designed and implemented apartment website",
+        "Customized WordPress property template"
+      ]
+    }
+  ],
+  "work_experience": [
+    {
+      "position": "Mobile Developer",
+      "company": "PT Asuransi Jiwa Astra",
+      "location": "Jakarta",
+      "start_date": "2025-12",
+      "end_date": "Present",
+      "technologies": [
+        "SDX",
+        "Mobile Development"
+      ],
+      "responsibilities": [
+        "Implemented SDX integration methods",
+        "Improved synchronization efficiency by 20%",
+        "Participated in sprint planning and retrospectives",
+        "Refactored legacy data structures"
+      ]
+    },
+    {
+      "position": "IT Developer",
+      "company": "PT Sompo Insurance",
+      "location": "Jakarta",
+      "start_date": "2025-06",
+      "end_date": "2025-12",
+      "technologies": [
+        "Angular",
+        "Spring Boot",
+        "REST API"
+      ],
+      "responsibilities": [
+        "Refactored 7000+ line Angular legacy codebase",
+        "Created reusable UI components",
+        "Integrated Spring Boot APIs",
+        "Built dynamic UI rendering system",
+        "Led small frontend team"
+      ]
+    },
+    {
+      "position": "Front End Engineer",
+      "company": "PT Bank Danamon Indonesia Tbk",
+      "location": "Jakarta, Indonesia",
+      "start_date": "2024-05",
+      "end_date": "2025-05",
+      "technologies": [
+        "Angular 11",
+        "Angular 19",
+        "Spring Boot",
+        "SQL"
+      ],
+      "responsibilities": [
+        "Developed live video call feature",
+        "Migrated Angular 11 project to Angular 19",
+        "Built modular microsite architecture",
+        "Performed SQL audit analysis",
+        "Improved team collaboration by 30%"
+      ]
+    },
+    {
+      "position": "Mobile Developer",
+      "company": "PT Asuransi Jiwa Astra",
+      "location": "Jakarta, Indonesia",
+      "start_date": "2023-09",
+      "end_date": "2024-03",
+      "technologies": [
+        "AngularJS",
+        "Cordova",
+        "DOKU"
+      ],
+      "responsibilities": [
+        "Developed DOKU payment integration",
+        "Integrated Bank BJJ features",
+        "Implemented SDX synchronization methods"
+      ]
+    },
+    {
+      "position": "Front End Web Engineer",
+      "company": "PT Rpay Finansial Digital Indonesia",
+      "location": "Jakarta, Indonesia",
+      "start_date": "2023-01",
+      "end_date": "2023-08",
+      "technologies": [
+        "Vue.js",
+        "MVC",
+        "API Integration"
+      ],
+      "responsibilities": [
+        "Developed Vue.js back office system",
+        "Created Excel-to-image compression feature",
+        "Integrated external APIs",
+        "Improved development workflow"
+      ]
+    },
+    {
+      "position": "Front End Engineer",
+      "company": "PT REDPHOENIX KREATIF DIGITAL",
+      "location": "Jakarta, Indonesia",
+      "start_date": "2021-12",
+      "end_date": "2022-12",
+      "technologies": [
+        "MVVM",
+        "Android",
+        "SDX"
+      ],
+      "responsibilities": [
+        "Created reusable app skeleton",
+        "Built digital e-materai application",
+        "Created SRS documentation",
+        "Implemented SDX orchestration"
+      ]
+    },
+    {
+      "position": "Software Engineer",
+      "company": "PT WISATECH",
+      "location": "Jakarta, Indonesia",
+      "start_date": "2021-03",
+      "end_date": "2021-12",
+      "technologies": [
+        "Zoom API",
+        "Moodle",
+        "Microsoft Calendar"
+      ],
+      "responsibilities": [
+        "Integrated Zoom and Moodle systems",
+        "Created education APIs",
+        "Built scheduler feature",
+        "Resolved security vulnerabilities"
+      ]
+    },
+    {
+      "position": "Front End Engineer",
+      "company": "PT MEEBER",
+      "location": "Jakarta, Indonesia",
+      "start_date": "2019-12",
+      "end_date": "2020-12",
+      "technologies": [
+        "Ionic",
+        "Angular",
+        "Flutter"
+      ],
+      "responsibilities": [
+        "Developed reservation and home cooking features",
+        "Integrated APIs",
+        "Created synchronization mechanisms"
+      ]
+    }
+  ]
+}

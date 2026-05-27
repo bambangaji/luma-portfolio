@@ -8,7 +8,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export default function SectionChartMain() {
+export const SectionChartMain = () => {
   const data = [
     { name: "Jan", users: 4000 },
     { name: "Feb", users: 3000 },

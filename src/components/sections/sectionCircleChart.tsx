@@ -4,7 +4,7 @@ import CircleChart from "../charts/circleChart";
 // 1️⃣ Define a type for valid chart keys
 type ChartType = "tech" | "users" | "revenue";
 
-export default function SectionCircleChart() {
+export const SectionCircleChart = () => {
     const [selectedOption, setSelectedOption] = useState<ChartType>("tech");
 
     // 2️⃣ Define data type for chartData object

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate } from "react-router-dom"
-import type { ItemDetail } from "../../models/item-detail.model";
+import type { ItemDetail } from "../../models/itemDetail.model";
 
 interface Props {
   items: any[],

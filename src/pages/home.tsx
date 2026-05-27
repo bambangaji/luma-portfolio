@@ -1,7 +1,7 @@
 import { useState } from "react";
-import SectionChartMain from "../components/sections/sectionChartMain";
-import SectionCircleChart from "../components/sections/sectionCircleChart";
-import SectionHeader from "../components/sections/sectionHeader"; // <-- adjust path as needed
+import { SectionChartMain } from "../components/sections/sectionChartMain";
+import { SectionCircleChart } from "../components/sections/sectionCircleChart";
+import { SectionHeader } from "../components/sections/sectionHeader"; // <-- adjust path as needed
 import { ChevronDown } from "lucide-react";
 
 

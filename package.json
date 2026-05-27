@@ -1,5 +1,5 @@
 {
-  "name": "mbg-public-fe",
+  "name": "my-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,13 +14,16 @@
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.0",
     "@reduxjs/toolkit": "^2.9.2",
+    "clsx": "^2.1.1",
     "lucide-react": "^0.548.0",
+    "motion": "^12.40.0",
     "react": "^19.1.1",
     "react-day-picker": "^9.11.1",
     "react-dom": "^19.1.1",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.5",
-    "recharts": "^3.3.0"
+    "recharts": "^3.3.0",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

@@ -1,0 +1,11 @@
+name: "Filesystem MCP"
+version: "0.0.1"
+schema: "v1"
+
+mcpServers:
+  - name: "filesystem"
+    command: "npx"
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-filesystem"
+      - "C:\\Users\\Shigure\\Documents\\project\\mbg\\mbg-public\\my-portfolio"

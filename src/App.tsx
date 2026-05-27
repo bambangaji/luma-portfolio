@@ -1,16 +1,31 @@
 import { Outlet } from 'react-router-dom'
-import Navbar from './components/navbar'
+import { ThemeToggle } from './components/theme-toggle'
+import { Navigation } from './components/navigations'
+import { useEffect, useState } from 'react';
 
 export default function App() {
-  return (
-    <>
-      <div className='bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300'>
-        <Navbar />
-        <main className="max-w-[1600px] mx-auto ">
-          <Outlet />
-        </main>
-      </div>
+  const [isDark, setIsDark] = useState(() => {
+    return document.documentElement.classList.contains('dark');
+  });
 
-    </>
-  )
+  const toggleTheme = () => {
+    setIsDark((prev) => !prev);
+    console.log('Toggled theme, isDark:', !isDark);
+  };
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDark);
+  }, [isDark]);
+
+  return (
+    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+      <ThemeToggle isDark={isDark} toggle={toggleTheme} />
+
+      <Navigation />
+
+      <main className="mx-auto">
+        <Outlet context={{ isDark }} />
+      </main>
+    </div>
+  );
 }
