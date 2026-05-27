@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { LandingPageService } from '../../services/landingPageService';
 
@@ -8,7 +7,6 @@ export const HeroSection = () => {
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const heroData = LandingPageService.getHero();
-  const heroTitle = heroData.title as unknown as ReactNode;
   return (
     <section
       id="hero"

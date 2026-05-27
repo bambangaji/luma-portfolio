@@ -43,10 +43,14 @@ export default function CircleChart({
               isAnimationActive={true}
             >
               {data.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={colors[index % colors.length]}
-                />
+                <div>
+                  <span className="hidden">{entry.name}</span>
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={colors[index % colors.length]}
+                  />
+                </div>
+
               ))}
             </Pie>
             <Tooltip />

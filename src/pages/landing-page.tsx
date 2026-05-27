@@ -1,7 +1,6 @@
 import { AboutSection } from '../components/sections/aboutSection';
 import { SkillsSection } from '../components/sections/skillsSection';
 import { ProjectsSection } from '../components/sections/projectsSection';
-import { ExperienceSection } from '../components/sections/experienceSection';
 import { ContactSection } from '../components/sections/contactSection';
 import { Footer } from '../components/footer';
 import { HeroSection } from '../components/sections/heroSection';

@@ -1,12 +1,10 @@
-import { motion } from "framer-motion";
-
 export const Footer = () => {
-  const platforms = [
-    // "GitHub",
-    // "LinkedIn",
-    // "Twitter",
-    // "Google Scholar",
-  ];
+  // const platforms = [
+  //   // "GitHub",
+  //   // "LinkedIn",
+  //   // "Twitter",
+  //   // "Google Scholar",
+  // ];
 
   return (
     <footer
@@ -52,7 +50,7 @@ export const Footer = () => {
         </p>
 
         {/* Social Links */}
-        <div className="flex gap-4">
+        {/* <div className="flex gap-4">
           {platforms.map((platform) => (
             <motion.a
               key={platform}
@@ -75,7 +73,7 @@ export const Footer = () => {
               {platform}
             </motion.a>
           ))}
-        </div>
+        </div> */}
       </div>
     </footer>
   );

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionTitle } from "./sectionTitle";
 import { LandingPageService } from "../../services/landingPageService";
@@ -37,31 +36,8 @@ const contactConfig = {
   },
 };
 export const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [sent, setSent] = useState(false);
-
   const contacts = LandingPageService.getContactInfo();
   console.log("Contact Info:", contacts);
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    setSent(true);
-
-    setTimeout(() => {
-      setSent(false);
-
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    }, 3000);
-  };
 
   return (
     <section
