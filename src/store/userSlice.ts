@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { userService } from "../services/userService";
-import type { User } from "../models/userModel";
+import type { User } from "../interface/userModel";
 
 
 export const fetchUsers = createAsyncThunk("users/fetch", async () => {

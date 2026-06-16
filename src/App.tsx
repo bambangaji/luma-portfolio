@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import { ThemeToggle } from './components/theme-toggle'
 import { Navigation } from './components/navigations'
 import { useEffect, useState } from 'react';
+import { Toaster } from 'sonner';
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -18,14 +19,22 @@ export default function App() {
   }, [isDark]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
-      <ThemeToggle isDark={isDark} toggle={toggleTheme} />
+    <>
+      <Toaster
+        position="top-right"
+        richColors
+        closeButton
+      />
 
-      <Navigation />
+      <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300">
+        <ThemeToggle isDark={isDark} toggle={toggleTheme} />
 
-      <main className="mx-auto">
-        <Outlet context={{ isDark }} />
-      </main>
-    </div>
+        <Navigation />
+
+        <main className="mx-auto">
+          <Outlet context={{ isDark }} />
+        </main>
+      </div>
+    </>
   );
 }

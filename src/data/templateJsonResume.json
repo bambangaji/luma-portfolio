@@ -1,0 +1,63 @@
+{
+    "personal_information": {
+        "full_name": "",
+        "email": "",
+        "phone": "",
+        "location": {
+            "city": "",
+            "province": "",
+            "country": ""
+        },
+        "description": ""
+    },
+    "socials": [
+        {
+            "type": "",
+            "url": "",
+            "value": ""
+        }
+    ],
+    "education": [
+        {
+            "degree": "",
+            "institution": "",
+            "gpa": 0,
+            "start_date": "",
+            "end_date": ""
+        }
+    ],
+    "certifications": [
+        {
+            "name": "",
+            "issuer": "",
+            "year": 0,
+            "description": ""
+        }
+    ],
+    "experiences": [
+        {
+            "role": "",
+            "company": "",
+            "start_date": "",
+            "end_date": "",
+            "is_current": false,
+            "description": [],
+            "technologies": []
+        }
+    ],
+    "projects": [
+        {
+            "title": "",
+            "description": "",
+            "url": "",
+            "thumbnail": "",
+            "technologies": []
+        }
+    ],
+    "skills": [
+        {
+            "category": "",
+            "items": []
+        }
+    ]
+}

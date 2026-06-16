@@ -6,7 +6,8 @@ export const HeroSection = () => {
 
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const heroData = LandingPageService.getHero();
+  const hero = LandingPageService.getHero();
+  const stats = LandingPageService.getStats();
   return (
     <section
       id="hero"
@@ -77,13 +78,17 @@ export const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="
-            mb-6 inline-block rounded-full border
-            border-violet-100 bg-violet-50 px-4 py-2 text-violet-600
-            dark:border-white/10 dark:bg-white/5 dark:text-cyan-400
-          "
+          className="  mb-5 inline-block rounded-full border  border-violet-100 bg-violet-50  px-3 py-1.5
+  text-xs font-medium
+  text-violet-600
+  dark:border-white/10
+  dark:bg-white/5
+  dark:text-cyan-400
+  sm:px-4 sm:py-2
+  sm:text-sm
+"
         >
-          {heroData.badge}
+          {hero.badge}
         </motion.div>
 
         {/* Title */}
@@ -92,12 +97,20 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="
-            mb-6 text-5xl font-bold leading-tight
-            text-slate-900 dark:text-white
-            md:text-7xl
-          "
+  mb-5
+
+  text-4xl font-bold leading-tight
+  tracking-tight
+
+  text-slate-900
+  dark:text-white
+
+  sm:text-5xl
+  md:text-6xl
+  lg:text-7xl
+"
         >
-          {heroData.title.prefix}
+          {hero.title.prefix}
           <br />
 
           <span
@@ -107,7 +120,7 @@ export const HeroSection = () => {
               bg-clip-text text-transparent dark:text-transparent
             "
           >
-            {heroData.title.highlight}
+            {hero.title.highlight}
           </span>
         </motion.h1>
 
@@ -117,12 +130,19 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="
-            mb-10 text-xl
-            text-slate-600 dark:text-slate-400
-            md:text-2xl
-          "
+  mx-auto mb-8
+  max-w-2xl
+
+  text-base leading-relaxed
+  text-slate-600
+
+  dark:text-slate-400
+
+  sm:text-lg
+  md:text-xl
+"
         >
-          {heroData.description}
+          {hero.short_description || hero.description}
         </motion.p>
 
         {/* CTA */}
@@ -179,7 +199,7 @@ export const HeroSection = () => {
     mt-16 flex justify-center gap-12
   "
         >
-          {heroData.stats.map((stat, index) => (
+          {stats.map((stat, index) => (
             <div
               key={index}
               className="text-center"

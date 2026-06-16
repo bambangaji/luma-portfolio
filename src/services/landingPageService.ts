@@ -1,70 +1,81 @@
-import data from '../data/dummy.json';
+import data from '../data/dummyFromN8N.json';
+import dataPorto from '../data/templateJsonClassification.json';
+import type { PortfolioJson } from '../interface/portofolioJson.interface';
+import type { ResumeJson } from '../interface/resumeJson.interface';
+import { PortfolioMergeService } from './portofolio-merge.service';
+import { PortfolioSanitizerService } from './portofolio-sanitizer.service';
 
-import type {
-  About,
-  ContactItem,
-  Experience,
-  Hero,
-  PersonalInformation,
-  Project,
-  Skills,
-} from '../models/landingPageModel';
-
-interface LandingPageData {
-  experiences: Experience[];
-  projects: Project[];
-  abouts: About;
-  hero: Hero;
-  contacts: ContactItem[];
-  skills: Skills;
-  personal_information: PersonalInformation;
-}
-
-const landingPageData = data as LandingPageData;
 
 export class LandingPageService {
+  private static readonly data =
+    data.json as ResumeJson;
 
-  static getExperiences(): Experience[] {
-    return landingPageData.experiences;
+  private static readonly portfolio_sanitize =
+    PortfolioSanitizerService.sanitize(dataPorto);
+  ;
+
+  private static readonly portfolio =
+    PortfolioMergeService.merge(data.json as ResumeJson, this.portfolio_sanitize);
+
+  static getPortfolio(): PortfolioJson {
+ 
+    return this.portfolio;
   }
 
-  static getExperienceById(
-    id: string
-  ): Experience | undefined {
-    return landingPageData.experiences.find(
-      (experience) => experience.id === id
-    );
+  static getHero() {
+       console.log('Merged Portfolio:', this.portfolio);
+       console.log('Merged Portfolio:', this.data);
+       console.log('Merged Portfolio:', this.portfolio_sanitize);
+    return this.portfolio.hero;
   }
 
-  static getProjects(): Project[] {
-    return landingPageData.projects;
+  static getSkillSection() {
+    return this.portfolio.skill_section;
   }
 
-  static getProjectById(
-    id: string
-  ): Project | undefined {
-    return landingPageData.projects.find(
-      (project) => project.id === id
-    );
+  static getExperienceSection() {
+    return this.portfolio.experience_section;
   }
 
-  static getAbout(): About {
-    return landingPageData.abouts;
+  static getProjectSection() {
+    return this.portfolio.project_section;
   }
 
-  static getHero(): Hero {
-    return landingPageData.hero;
+  static getStats() {
+    return this.portfolio.stats;
   }
 
-  static getContactInfo(): ContactItem[] {
-    return landingPageData.contacts;
+  // Resume
+
+  static getResume(): ResumeJson {
+    return this.data;
   }
 
-  static getSkills(): Skills {
-    return landingPageData.skills;
+  static getPersonalInformation() {
+    return this.data.personal_information;
   }
 
-  static getPersonalInformation(): PersonalInformation {
-    return landingPageData.personal_information;
+  static getSocials() {
+    return this.data.socials;
+  }
+
+  static getEducation() {
+    return this.data.education;
+  }
+
+  static getCertifications() {
+    return this.data.certifications;
+  }
+
+  static getExperiences() {
+    return this.data.experiences;
+  }
+
+  static getProjects() {
+    return this.data.projects;
+  }
+
+  static getSkills() {
+    return this.portfolio.skill_section;
   }
 }

@@ -1,13 +1,20 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '#about', isRoute: false },
+  { label: 'Skills', href: '#skills', isRoute: false },
+  { label: 'Projects', href: '#projects', isRoute: false },
+  { label: 'Experience', href: '#experience', isRoute: false },
+  { label: 'Contact', href: '#contact', isRoute: false },
+
+  {
+    label: 'Generate Resume',
+    href: '/generate-resume',
+    isRoute: true,
+  },
 ];
 
 export const Navigation = () => {
@@ -34,11 +41,10 @@ export const Navigation = () => {
         duration: 0.5,
         ease: 'easeOut',
       }}
-      className={`fixed inset-x-0 top-0 z-50 bg-transparent border-b transition-all duration-300 ${
-        scrolled
-          ? 'border-white/10  bg-transparent shadow-2xl backdrop-blur-2xl'
-          : 'border-transparent bg-transparent'
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 bg-transparent border-b transition-all duration-300 ${scrolled
+        ? 'border-white/10  bg-transparent shadow-2xl backdrop-blur-2xl'
+        : 'border-transparent bg-transparent'
+        }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
@@ -59,23 +65,56 @@ export const Navigation = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 md:flex">
-          {navLinks.map((link) => (
-            <motion.a
-              key={link.label}
-              href={link.href}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.96 }}
-              className="group relative overflow-hidden rounded-2xl px-5 py-2.5 text-sm font-medium text-neutral-300 transition-all duration-300 hover:text-white"
-            >
-              {/* Hover Background */}
-              <span className="absolute inset-0 rounded-2xl border border-cyan-400/20 bg-white/5 opacity-0 backdrop-blur-xl transition-all duration-300 group-hover:opacity-100" />
+          {navLinks.map((link) => {
+            const content = (
+              <>
+                <span className="absolute inset-0 rounded-2xl border border-cyan-400/20 bg-white/5 opacity-0 backdrop-blur-xl transition-all duration-300 group-hover:opacity-100" />
 
-              {/* Glow */}
-              <span className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/10 to-cyan-400/0 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/10 to-cyan-400/0 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
 
-              <span className="text-slate-900 dark:text-white relative z-10">{link.label}</span>
-            </motion.a>
-          ))}
+                <span className="relative z-10 text-slate-900 dark:text-white">
+                  {link.label}
+                </span>
+              </>
+            );
+
+            if (link.isRoute) {
+              return (
+                <motion.div
+                  key={link.label}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.96 }}
+                >
+                  <Link
+                    to={link.href}
+                    className="
+            group relative overflow-hidden
+            rounded-2xl px-5 py-2.5
+            text-sm font-medium
+          "
+                  >
+                    {content}
+                  </Link>
+                </motion.div>
+              );
+            }
+
+            return (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                className="
+        group relative overflow-hidden
+        rounded-2xl px-5 py-2.5
+        text-sm font-medium
+      "
+              >
+                {content}
+              </motion.a>
+            );
+          })}
         </nav>
 
         {/* Mobile Button */}

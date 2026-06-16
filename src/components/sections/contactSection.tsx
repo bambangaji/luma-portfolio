@@ -36,8 +36,17 @@ const contactConfig = {
   },
 };
 export const ContactSection = () => {
-  const contacts = LandingPageService.getContactInfo();
-  console.log("Contact Info:", contacts);
+  let social = LandingPageService.getSocials();
+  social =  social.map(
+    social => ({
+      ...social,
+      type: social.type
+        .trim()
+        .toLowerCase(),
+    })
+  );
+
+  console.log("Contact Info:", social);
 
   return (
     <section
@@ -55,14 +64,22 @@ export const ContactSection = () => {
         />
 
         <div className="grid gap-4">
-          {contacts.map((item) => {
-            const config = contactConfig[item.type];
+          {social.map(item => {
+            const config =
+              contactConfig[
+              item.type as keyof typeof contactConfig
+              ];
 
-            const Icon = config.icon;
+            if (!config) {
+              return null;
+            }
+
+            const Icon =
+              config.icon;
 
             return (
               <motion.a
-                key={item.type}
+                key={`${item.type}-${item.value}`}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -70,11 +87,12 @@ export const ContactSection = () => {
                   scale: 1.02,
                   y: -2,
                 }}
-                whileTap={{ scale: 0.98 }}
+                whileTap={{
+                  scale: 0.98,
+                }}
                 className="
           group flex items-center justify-between
           rounded-2xl border p-5
-          transition-all duration-300
 
           border-gray-200 bg-white
           hover:border-violet-300
@@ -97,7 +115,8 @@ export const ContactSection = () => {
                     <Icon
                       className="
                 h-5 w-5
-                text-violet-600 dark:text-cyan-400
+                text-violet-600
+                dark:text-cyan-400
               "
                     />
                   </div>
@@ -106,7 +125,8 @@ export const ContactSection = () => {
                     <div
                       className="
                 font-semibold
-                text-slate-900 dark:text-white
+                text-slate-900
+                dark:text-white
               "
                     >
                       {config.label}
@@ -115,7 +135,8 @@ export const ContactSection = () => {
                     <div
                       className="
                 text-sm
-                text-slate-500 dark:text-slate-400
+                text-slate-500
+                dark:text-slate-400
               "
                     >
                       {item.value}
@@ -124,10 +145,11 @@ export const ContactSection = () => {
                 </div>
 
                 <motion.div
-                  whileHover={{ x: 4 }}
+                  whileHover={{
+                    x: 4,
+                  }}
                   className="
             text-slate-400
-            transition-colors
             group-hover:text-violet-500
           "
                 >

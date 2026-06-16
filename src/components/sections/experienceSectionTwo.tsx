@@ -2,7 +2,19 @@ import { useState } from "react";
 import { LandingPageService } from "../../services/landingPageService";
 
 export const ExperienceSectionTwo = () => {
-  const experiences = LandingPageService.getExperiences();
+  const experiences =
+    [...LandingPageService.getExperiences()]
+      .sort((a, b) => {
+        const aDate = new Date(
+          a.end_date || a.start_date
+        ).getTime();
+
+        const bDate = new Date(
+          b.end_date || b.start_date
+        ).getTime();
+
+        return bDate - aDate;
+      });
   const [showAll, setShowAll] = useState(false);
 
   const displayedExperiences = showAll
@@ -42,9 +54,9 @@ export const ExperienceSectionTwo = () => {
             border-l border-slate-200 dark:border-gray-800
           "
         >
-          {displayedExperiences.map((exp) => (
+          {displayedExperiences.map((exp, index) => (
             <div
-              key={exp.id}
+              key={index}
               className="relative pl-8 md:pl-12 group"
             >
               {/* Timeline Dot */}
@@ -73,7 +85,7 @@ export const ExperienceSectionTwo = () => {
                     dark:bg-gray-800 dark:text-slate-400
                   "
                 >
-                  {exp.period}
+                  {exp.start_date} - {exp.end_date}
                 </span>
               </div>
 

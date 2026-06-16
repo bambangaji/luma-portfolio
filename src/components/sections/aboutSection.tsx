@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import {
   Award,
   Calendar,
-  GraduationCap,
-  MapPin,
+  GraduationCap
 } from 'lucide-react';
 
 import { SectionTitle } from './sectionTitle';
@@ -12,13 +11,14 @@ import { SectionTitle } from './sectionTitle';
 import { LandingPageService } from '../../services/landingPageService';
 
 export const AboutSection = () => {
-  const about = LandingPageService.getAbout();
+  const hero = LandingPageService.getHero();
 
   const personalInformation =
     LandingPageService.getPersonalInformation();
 
-  const education = about.education[0];
-
+  const education = LandingPageService.getEducation()[0];
+  const certifications =
+    LandingPageService.getCertifications();
   return (
     <section
       id="about"
@@ -44,7 +44,7 @@ export const AboutSection = () => {
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionTitle
           title="About Me"
-          subtitle={about.tagline}
+          subtitle={hero.headline}
         />
 
         <div
@@ -206,7 +206,7 @@ export const AboutSection = () => {
                 >
                   {personalInformation.full_name}
                 </span>{' '}
-                — {about.description}
+                — {hero.description}
               </p>
             </div>
 
@@ -339,71 +339,84 @@ export const AboutSection = () => {
               </div>
 
               <div className="space-y-4">
-                {education.certifications.map(
-                  (certification) => (
+                {certifications.map(
+                  certification => (
                     <motion.div
-                      key={certification.name}
+                      key={`${certification.name}-${certification.year}`}
                       whileHover={{
                         y: -2,
                       }}
                       className="
-                        rounded-2xl border
+          rounded-2xl border
 
-                        border-gray-200
-                        bg-gray-50
+          border-gray-200
+          bg-gray-50
 
-                        p-5
+          p-5
 
-                        transition-all duration-300
+          transition-all duration-300
 
-                        hover:border-violet-300
-                        hover:shadow-lg
+          hover:border-violet-300
+          hover:shadow-lg
 
-                        dark:border-gray-800
-                        dark:bg-gray-900
-                        dark:hover:border-violet-500/30
-                      "
+          dark:border-gray-800
+          dark:bg-gray-900
+          dark:hover:border-violet-500/30
+        "
                     >
                       <div
                         className="
-                          mb-2 flex items-center justify-between
-                        "
+            mb-2 flex items-center justify-between
+          "
                       >
                         <h5
                           className="
-                            font-semibold
-                            text-slate-900 dark:text-white
-                          "
+              font-semibold
+              text-slate-900 dark:text-white
+            "
                         >
                           {certification.name}
                         </h5>
 
-                        <span
-                          className="
-                            rounded-full
+                        {certification.year > 0 && (
+                          <span
+                            className="
+                rounded-full
 
-                            bg-violet-100
-                            px-3 py-1
+                bg-violet-100
+                px-3 py-1
 
-                            text-xs font-medium
-                            text-violet-700
+                text-xs font-medium
+                text-violet-700
 
-                            dark:bg-violet-500/10
-                            dark:text-violet-300
-                          "
-                        >
-                          {certification.year}
-                        </span>
+                dark:bg-violet-500/10
+                dark:text-violet-300
+              "
+                          >
+                            {certification.year}
+                          </span>
+                        )}
                       </div>
 
                       <p
                         className="
-                          text-sm leading-relaxed
-                          text-slate-600 dark:text-slate-400
-                        "
+            text-sm font-medium
+            text-slate-600 dark:text-slate-400
+          "
                       >
-                        {certification.description}
+                        {certification.issuer}
                       </p>
+
+                      {certification.description && (
+                        <p
+                          className="
+              mt-2 text-sm leading-relaxed
+              text-slate-500 dark:text-slate-500
+            "
+                        >
+                          {certification.description}
+                        </p>
+                      )}
                     </motion.div>
                   )
                 )}

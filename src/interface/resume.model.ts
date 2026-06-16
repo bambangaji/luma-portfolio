@@ -107,3 +107,14 @@ export interface WorkExperience {
 
   achievements?: string[];
 }
+
+export interface ResumeSection {
+    title: string;
+    content: string[];
+}
+
+export interface PdfJson {
+    file_name: string;
+    total_pages: number;
+    sections: ResumeSection[];
+}

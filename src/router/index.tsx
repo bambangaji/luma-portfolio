@@ -6,6 +6,7 @@ import SearchPage from "../pages/searching-page"
 import ItemDetailPage from "../pages/item/item-detail-page"
 import WhatsappPages from "../pages/whatsapp/whatsapp-page"
 import { LandingPage } from "../pages/landing-page"
+import GenerateResume from "../pages/generate-resume"
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage/> },
       { path: "about", element: <AboutPage /> },
+      { path: "generate-resume", element: <GenerateResume /> },
       { path: "*", element: <NotFoundPage /> },
       { path: "search", element: <SearchPage /> },
       { path: "whatsapp", element: <WhatsappPages /> },

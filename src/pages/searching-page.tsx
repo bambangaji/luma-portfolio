@@ -6,7 +6,7 @@ import ThumbnailView from "../components/views/thumbnail-view"
 import Pagination from "../components/pagination"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTh, faList, faImages } from "@fortawesome/free-solid-svg-icons"
-import type { ItemDetail } from "../models/itemDetail.model"
+import type { ItemDetail } from "../interface/itemDetail.model"
 
 type ViewType = "card" | "list" | "thumbnail"
 
