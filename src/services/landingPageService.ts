@@ -24,8 +24,6 @@ export class LandingPageService {
 
   static getHero() {
        console.log('Merged Portfolio:', this.portfolio);
-       console.log('Merged Portfolio:', this.data);
-       console.log('Merged Portfolio:', this.portfolio_sanitize);
     return this.portfolio.hero;
   }
 

@@ -48,20 +48,32 @@ export const Navigation = () => {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <motion.a
-          href="#hero"
+        <motion.div
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
           className="group relative flex items-center"
         >
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-500/20 to-cyan-400/20 blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-          <span className="relative text-2xl font-black tracking-tight">
-            <span className="dark:text-transparent bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
-              Software Engineer
+          <Link
+            to="/"
+            className="relative z-10"
+          >
+            <span className="relative text-2xl font-black tracking-tight">
+              <span
+                className="
+          bg-gradient-to-r
+          from-violet-500
+          via-fuchsia-500
+          to-cyan-400
+          bg-clip-text
+          text-transparent
+          dark:text-transparent
+        "
+              >
+                LUMA PORTFOLIO
+              </span>
             </span>
-          </span>
-        </motion.a>
+          </Link>
+        </motion.div>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 md:flex">

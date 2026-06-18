@@ -1,14 +1,13 @@
 import { toast } from 'sonner';
 import templateJson from '../data/templateJsonResume.json';
 import templateClassificationJson from '../data/templateJsonClassification.json';
-import dummyN8N from '../data/dummyFromN8N.json';
 import type { PdfJson } from '../interface/resume.model';
 
 export class ResumeService {
     private static readonly URL =
         'http://localhost:5678/webhook/generate-resume';
     private static readonly URL_CLASSIFICATION =
-        'http://localhost:5678/webhook-test/classification-resume';
+        'http://localhost:5678/webhook/classification-resume';
 
     private static readonly MAX_RETRY = 3;
 
@@ -74,7 +73,7 @@ export class ResumeService {
                         }
                     );
 
-                    return result;
+                    return this.classificationResume(result.json);
                 } catch (error) {
                     lastError =
                         error instanceof Error
@@ -136,7 +135,9 @@ export class ResumeService {
 
     }
     static async classificationResume(
+        resumeText: string,
     ) {
+        console.log("Classification called",resumeText);
         const toastId = toast.loading(
             'Generating resume...'
         );
@@ -159,7 +160,7 @@ export class ResumeService {
                                     'application/json',
                             },
                             body: JSON.stringify({
-                                resume_text: dummyN8N,
+                                resume_text: resumeText,
                                 template_json:
                                     templateClassificationJson,
                             }),

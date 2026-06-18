@@ -1,0 +1,190 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "classification-resume",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "61282bee-e905-443f-ae9c-2c57dab7196f",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        272,
+        64
+      ],
+      "webhookId": "81a81c81-677b-45b6-9a0c-35dc93d9f973"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{$json}}",
+        "options": {}
+      },
+      "id": "fc133051-1f8f-4983-af9b-fd3816c3088b",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1504,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const content =$input.first().json.output\n\n\ntry {\n  return [\n    {\n      json: {\n        json:content,\n        success: true\n      },\n    },\n  ];\n} catch (error) {\n  return [\n    {\n      json: {\n        success: false,\n        error: error.message,\n        json: content,\n      },\n    },\n  ];\n}\n"
+      },
+      "id": "834a6e04-6cdf-4438-a515-419108ac15b8",
+      "name": "Normalize JSON1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-4o-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        608,
+        256
+      ],
+      "id": "4e9da19d-71bb-42d9-8be7-08cb4a7e9503",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "VVYB6dYfaUxWl631",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a deterministic portfolio JSON mapper from this data\n\n\n\nYour task is to transform this Resume JSON {{ $json.body.resume_text.json }} into the Portfolio JSON template.\n\nSTRICT RULES\n\n1. Return ONLY valid JSON.\n2. Do NOT return markdown.\n3. Do NOT use ```json.\n4. Do NOT explain.\n5. Do NOT include reasoning.\n6. Do NOT include thinking.\n7. Do NOT include commentary.\n8. Do NOT add properties.\n9. Do NOT remove properties.\n10. Preserve the exact structure of the target template.\n11. Preserve all experience records.\n12. Preserve all project records.\n13. Preserve all skill categories.\n14. Never invent companies.\n15. Never invent projects.\n16. Never invent certifications.\n17. Never invent technologies.\n18. Never invent dates.\n19. Use only information available in the source JSON.\n\nMAPPING RULES \n\nhero.badge\n\n* Use the most recent current role.\n* If no current role exists, use the most recent role by date.\n\nhero.headline\n\n* Create a short professional headline using:\n\n  * latest role\n  * years of experience\n  * strongest expertise areas\n\nMaximum 12 words.\n\nhero.title.prefix\n\n* Create a concise portfolio title.\n* Maximum 4 words.\n\nhero.title.highlight\n\n* Create a concise highlighted phrase.\n* Maximum 4 words.\n\nhero.description\n\n Use personal_information.description exactly as provided.\n\nskills.title\n\n* Preserve template value.\n\nskills.subtitle\n\n* Create a concise summary using the skill categories.\n* Maximum 150 characters.\n\nskills.categories\n\nMap:\n\n{\n\"category\": \"...\",\n\"items\": [...]\n}\n\nto\n\n{\n\"name\": \"...\",\n\"score\": number,\n\"items\": [...]\n}\n\nScore Rules:\n\n1-3 skills = 60\n4-6 skills = 75\n7-10 skills = 90\n11+ skills = 100\n\nexperience.title\n\n* Preserve template value.\n\nexperience.items\n\n* Copy all experience records.\n\nprojects.title\n\n* Preserve template value.\n\nprojects.items\n\n* Copy all project records.\n\nprojects.filters\n\n* Generate unique filters from project technologies.\n* Remove duplicates.\n* Sort alphabetically.\n\nstats.years_experience\n\n* Calculate from earliest experience start_date until current year.\n\nstats.projects\n\n* Total number of projects.\n\nstats.companies\n\n* Count unique companies in experiences.\n\nstats.skills\n\n* Total number of skills across all categories.\n\n",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        736,
+        64
+      ],
+      "id": "7475eb3c-05ab-45aa-8116-99e8158228cd",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $workflow.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        784,
+        304
+      ],
+      "id": "4d0d170a-e542-4918-b332-fe67159a116d",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "kPyuJ4sdZysuk1pd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"hero\": {\n    \"badge\": \"\",\n    \"headline\": \"\",\n    \"title\": {\n      \"prefix\": \"\",\n      \"highlight\": \"\"\n    },\n    \"description\": \"\"\n  },\n\n  \"skills\": {\n    \"title\": \"Skills & Expertise\",\n    \"subtitle\": \"\",\n    \"categories\": [\n      {\n        \"name\": \"\",\n        \"score\": 0,\n        \"items\": []\n      }\n    ]\n  },\n\n  \"experience\": {\n    \"title\": \"Work Experience\",\n    \"items\": []\n  },\n\n  \"projects\": {\n    \"title\": \"Featured Projects\",\n    \"filters\": [],\n    \"items\": []\n  },\n\n  \"stats\": {\n    \"years_experience\": 0,\n    \"projects\": 0,\n    \"companies\": 0,\n    \"skills\": 0\n  }\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        928,
+        304
+      ],
+      "id": "8a73c2e5-8e2d-4f4d-86fa-19bdde5b9752",
+      "name": "Structured Output Parser"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize JSON1": {
+      "main": [
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Normalize JSON1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "8f689992e12a160cccc4f5fd190e50ff48af13a7cfba697a382c8f08b100eecc"
+  }
+}

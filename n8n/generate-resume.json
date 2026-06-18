@@ -1,0 +1,364 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-resume",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "09b3cd3d-692c-46b2-b60f-f2b72adcecf5",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        -160
+      ],
+      "webhookId": "81a81c81-677b-45b6-9a0c-35dc93d9f973"
+    },
+    {
+      "parameters": {
+        "jsCode": "const classifications =\n  JSON.parse(\n    $input.first().json.message.content\n  );\n\nlet rawSections =\n  $('Webhook')\n    .first()\n    .json\n    .body\n    .resume_text;\n\n// if string\nif (\n  typeof rawSections ===\n  'string'\n) {\n  rawSections =\n    JSON.parse(\n      rawSections\n    );\n}\n\n// if object containing sections\nif (\n  rawSections.sections\n) {\n  rawSections =\n    rawSections.sections;\n}\n\nconst mergedSections =\n  classifications.sections\n    .map(classification => {\n      const section =\n        rawSections.find(\n          raw =>\n            raw.title ===\n            classification.originalTitle\n        );\n\n      return {\n        originalTitle:\n          classification.originalTitle,\n\n        classifiedAs:\n          classification.classifiedAs,\n\n        content:\n          section?.content || [],\n      };\n    })\n    .filter(\n      section =>\n        section.classifiedAs !==\n        'excluded'\n    );\n\nreturn [\n  {\n    json: {\n      sections:\n        mergedSections,\n    },\n  },\n];"
+      },
+      "id": "0126c861-cbe4-4468-836f-e68ebb91cc15",
+      "name": "Normalize JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        576,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{$json}}",
+        "options": {}
+      },
+      "id": "7c49fbf1-fa50-4756-93a7-d0eab3f7532f",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1072,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "=gemma4:latest",
+          "mode": "id"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You are a resume section classifier.\n\nYour task is to classify resume section titles from any language into ONE of the following categories:\n\nAllowed categories:\n- about\n- experience\n- education\n- skills\n- projects\n- certifications\n- languages\n- contact\n- excluded\n- other\n\nClassification Rules:\n\n1. Use \"excluded\" ONLY for values/content that appear inside sections, such as:\n   - Job titles: \"Software Engineer\", \"Frontend Developer\"\n   - Dates: \"January 2020 - Present\", \"Jun 2018\"\n   - Company names when they appear as content under a work entry (NOT as standalone headers)\n   - Certification issuers: \"Google\", \"Microsoft\"\n   - Standalone skills, tools, or technologies listed as content\n\n2. Classify company names as \"excluded\" when they function as:\n   - Standalone headers representing a work entry\n   - Sub-section titles under WORK EXPERIENCE that group role details\n   - Examples: \"PT REDPHOENIX KREATIF DIGITAL\", \"PT WISATECH\", \"PT MEEBER\",\"PT WISATECH\",\n\n3. Section title mapping:\n   - \"ABOUT\", \"PROFILE\", \"SUMMARY\" → about\n   - \"WORK EXPERIENCE\", \"EMPLOYMENT\", \"PROFESSIONAL EXPERIENCE\", company name headers → experience\n   - \"EDUCATION\", \"ACADEMIC BACKGROUND\" → education\n   - \"SKILLS\", \"TECHNICAL SKILLS\", \"COMPETENCIES\" → skills\n   - \"PROJECTS\", \"PORTFOLIO\", \"KEY PROJECTS\" → projects\n   - \"CERTIFICATIONS\", \"LICENSES\", \"CREDENTIALS\" → certifications\n   - \"LANGUAGES\", \"LANGUAGE PROFICIENCY\" → languages\n   - \"CONTACT\", \"CONTACT INFO\" → contact\n   - Anything unclear or not matching above → other\n\nOutput Rules:\n- Return ONLY valid JSON.\n- Do not explain.\n- Do not use markdown.\n- Do not use ```json.\n- Do not include reasoning or thinking.\n\nOutput Schema:\n{\n  \"sections\": [\n    {\n      \"originalTitle\": \"\",\n      \"classifiedAs\": \"\"\n    }\n  ]\n}",
+              "role": "assistant"
+            },
+            {
+              "content": "=Resume Sections:\n\n{{ JSON.stringify($json.body.resume_text) }}\n\nClassify every section.\nReturn JSON:\n\n{\n  \"sections\": [\n    {\n      \"originalTitle\": \"\",\n      \"classifiedAs\": \"\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        "simplify": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.ollama",
+      "typeVersion": 1,
+      "position": [
+        96,
+        -160
+      ],
+      "id": "5ee3091d-e676-4f6d-b0b7-497d45389ea9",
+      "name": "Message a model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "Ezml7G99gGx5eD7n",
+          "name": "Ollama account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const content =$input.first().json.output\n\n\ntry {\n  return [\n    {\n      json: {\n        json:content,\n        success: true\n      },\n    },\n  ];\n} catch (error) {\n  return [\n    {\n      json: {\n        success: false,\n        error: error.message,\n        json: content,\n      },\n    },\n  ];\n}\n"
+      },
+      "id": "cf758a57-d3ae-4053-8c4d-68bb79f378c4",
+      "name": "Normalize JSON1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        736,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "chat_history",
+          "mode": "list",
+          "cachedResultName": "chat_history"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "user_id": "local",
+            "role": "assistant",
+            "content": "={{ $('Message a model').item.json.message.content }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "role",
+              "displayName": "role",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "content",
+              "displayName": "content",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgresTool",
+      "typeVersion": 2.6,
+      "position": [
+        112,
+        16
+      ],
+      "id": "9105eee7-744a-4cd3-8b67-afdbcfd773bb",
+      "name": "Insert rows in a table in Postgres1",
+      "credentials": {
+        "postgres": {
+          "id": "kPyuJ4sdZysuk1pd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-4o-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        352,
+        272
+      ],
+      "id": "0d8d34bd-e120-4d30-ac34-ef2a102f7196",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "VVYB6dYfaUxWl631",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a deterministic resume JSON mapper.\n\nYour task is to populate the provided JSON template using ONLY information from the classified resume sections.\n\nSTRICT RULES\n\n1. Return ONLY valid JSON.\n2. Do NOT return markdown.\n3. Do NOT use ```json.\n4. Do NOT explain.\n5. Do NOT include reasoning.\n6. Do NOT include thinking.\n7. Do NOT include commentary.\n8. Do NOT add properties.\n9. Do NOT remove properties.\n10. Preserve the exact structure of the template.\n11. Preserve the exact property names of the template.\n12. Use ONLY information explicitly present in the classified sections.\n13. Never invent companies.\n14. Never invent projects.\n15. Never invent certifications.\n16. Never invent skills.\n17. Never invent dates.\n18. Never invent education history.\n19. Never infer missing information.\n\nMISSING VALUE RULES\n\nIf information cannot be found:\n\n* string → \"\"\n* array → []\n* object → preserve structure with empty values\n\nSECTION MAPPING\n\npersonal_information\n\n* full_name → from about/contact sections\n* email → from contact section\n* phone → from contact section\n* linkedin → from contact section\n* github → from contact section\n* portfolio → from contact section\n* image → always \"\"\n* city → from contact/about section if present\n* province → from contact/about section if present\n* country → from contact/about section if present\n\neducation\n\n* Use ONLY sections classified as education.\n* Preserve all education entries.\n* Extract:\n\n  * degree\n  * institution\n  * gpa\n  * start_date\n  * end_date\n\ncertifications\n\n* Use ONLY sections classified as certifications.\n* Preserve all certification entries.\n\nexperiences\n\n* Use ONLY sections classified as experience.\n* Preserve all experience entries.\n* Never merge jobs.\n* Never remove jobs.\n* Never resolve date conflicts.\n* If two jobs overlap, keep both.\n* Extract technologies only if explicitly mentioned.\n\nprojects\n\n* Use ONLY sections classified as projects.\n* Preserve all project entries.\n* Never invent technologie.\n* Mapping Projects first is Title\n* should be have description about working experience on this project\n\nskills\n\n* Use ONLY sections classified as skills.\n* Extract explicit technologies only.\n* Store all skills inside:\n* ONLY GIVE ARRAY STRING NOT NEED ADD PROFIENCY JUST THE NAME OF SKILL \n\n{\n\"items\": []\n}\nNEVER ASK CONFIRMATION JUST DO IT\nTHE RESULT ONLY FORMAT JSON DONT ADD ADDITIONAL NOTE OR SOMETHING JUST PURE JSON FORMAT\n\nClassified Resume Sections:\n\n{{ JSON.stringify($json.sections, null, 2) }}\nPortfolio Template:\n{{ JSON.stringify($('Webhook').item.json.body.template_json, null, 2) }}",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        400,
+        80
+      ],
+      "id": "7bfbc782-a49d-4405-a8b4-8a3470a72bf6",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $workflow.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        448,
+        272
+      ],
+      "id": "bf66203c-a960-45c8-83d2-8f7417100635",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "kPyuJ4sdZysuk1pd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n    \"personal_information\": {\n        \"full_name\": \"\",\n        \"email\": \"\",\n        \"phone\": \"\",\n        \"location\": {\n            \"city\": \"\",\n            \"province\": \"\",\n            \"country\": \"\"\n        }\n    },\n    \"socials\": [\n        {\n            \"type\": \"\",\n            \"url\": \"\"\n        }\n    ],\n    \"education\": [\n        {\n            \"degree\": \"\",\n            \"institution\": \"\",\n            \"gpa\": 0,\n            \"start_date\": \"\",\n            \"end_date\": \"\"\n        }\n    ],\n    \"certifications\": [\n        {\n            \"name\": \"\",\n            \"issuer\": \"\",\n            \"year\": 0,\n            \"description\": \"\"\n        }\n    ],\n    \"experiences\": [\n        {\n            \"role\": \"\",\n            \"company\": \"\",\n            \"start_date\": \"\",\n            \"end_date\": \"\",\n            \"is_current\": false,\n            \"description\": [],\n            \"technologies\": []\n        }\n    ],\n    \"projects\": [\n        {\n            \"title\": \"\",\n            \"description\": \"\",\n            \"url\": \"\",\n            \"thumbnail\": \"\",\n            \"technologies\": []\n        }\n    ],\n    \"skills\": [\n        {\n            \"category\": \"\",\n            \"items\": []\n        }\n    ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        560,
+        272
+      ],
+      "id": "93a3649a-f0cb-474f-a007-fc8fa45a766d",
+      "name": "Structured Output Parser"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize JSON": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Normalize JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize JSON1": {
+      "main": [
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert rows in a table in Postgres1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Message a model",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Normalize JSON1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8f689992e12a160cccc4f5fd190e50ff48af13a7cfba697a382c8f08b100eecc"
+  }
+}

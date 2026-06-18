@@ -91,7 +91,6 @@ export default function GenerateResume() {
     };
   useEffect(() => {
     console.log("Init called");
-    ResumeService.classificationResume();
   }, []);
   return (
     <div
