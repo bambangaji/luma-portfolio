@@ -1,7 +1,7 @@
-import data from '../data/dummyFromN8N.json';
-import dataPorto from '../data/templateJsonClassification.json';
-import type { PortfolioJson } from '../interface/portofolioJson.interface';
-import type { ResumeJson } from '../interface/resumeJson.interface';
+import data from '../data/dummy-from-n8-n.json';
+import dataPorto from '../data/template-json-classification.json';
+import type { PortfolioJson } from '../interface/portofolio-json.interface';
+import type { ResumeJson } from '../interface/resume-json.interface';
 import { PortfolioMergeService } from './portofolio-merge.service';
 import { PortfolioSanitizerService } from './portofolio-sanitizer.service';
 
@@ -18,7 +18,7 @@ export class LandingPageService {
     PortfolioMergeService.merge(data.json as ResumeJson, this.portfolio_sanitize);
 
   static getPortfolio(): PortfolioJson {
- 
+    console.log('Merged Portfolio:', this.portfolio);
     return this.portfolio;
   }
 

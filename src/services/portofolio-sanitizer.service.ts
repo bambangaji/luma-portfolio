@@ -1,4 +1,4 @@
-import type { PortfolioJson } from '../interface/portofolioJson.interface';
+import type { PortfolioJson } from '../interface/portofolio-json.interface';
 
 export class PortfolioSanitizerService {
   static sanitize(

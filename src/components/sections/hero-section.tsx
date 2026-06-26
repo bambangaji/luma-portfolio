@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { LandingPageService } from '../../services/landingPageService';
+import { LandingPageService } from '../../services/landing-page-service';
 
 export const HeroSection = () => {
   const { scrollY } = useScroll();

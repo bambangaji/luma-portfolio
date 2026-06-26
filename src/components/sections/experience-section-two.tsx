@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LandingPageService } from "../../services/landingPageService";
+import { LandingPageService } from "../../services/landing-page-service";
 
 export const ExperienceSectionTwo = () => {
   const experiences =

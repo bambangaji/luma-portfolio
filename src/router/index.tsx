@@ -7,6 +7,7 @@ import ItemDetailPage from "../pages/item/item-detail-page"
 import WhatsappPages from "../pages/whatsapp/whatsapp-page"
 import { LandingPage } from "../pages/landing-page"
 import GenerateResume from "../pages/generate-resume"
+import { PortfolioBuilderPage } from "../pages/portfolio-builder-page"
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { index: true, element: <LandingPage/> },
       { path: "about", element: <AboutPage /> },
       { path: "generate-resume", element: <GenerateResume /> },
+      { path: "portofolio-editor", element: <PortfolioBuilderPage /> },
       { path: "*", element: <NotFoundPage /> },
       { path: "search", element: <SearchPage /> },
       { path: "whatsapp", element: <WhatsappPages /> },

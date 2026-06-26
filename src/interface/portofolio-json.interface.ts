@@ -31,4 +31,12 @@ export interface PortfolioJson {
     label: string;
     value: number;
   }[];
+  education_section: {
+    degree: string;
+    institution: string;
+    gpa: number | null;
+    start_date: string | null;
+    end_date: string | null;
+    description: string[] | [];
+  }[];
 }

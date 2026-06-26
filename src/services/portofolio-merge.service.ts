@@ -1,5 +1,5 @@
-import type { PortfolioJson } from "../interface/portofolioJson.interface";
-import type { ResumeJson } from "../interface/resumeJson.interface";
+import type { PortfolioJson } from "../interface/portofolio-json.interface";
+import type { ResumeJson } from "../interface/resume-json.interface";
 import { PortfolioMappingService } from "./portofolio-mapping-service";
 
 export class PortfolioMergeService {
@@ -71,6 +71,7 @@ export class PortfolioMergeService {
 
             stats:
                 mapped.stats,
+            education_section: resume.education
         };
     }
 }

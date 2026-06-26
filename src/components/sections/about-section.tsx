@@ -6,9 +6,9 @@ import {
   GraduationCap
 } from 'lucide-react';
 
-import { SectionTitle } from './sectionTitle';
+import { SectionTitle } from './section-title';
 
-import { LandingPageService } from '../../services/landingPageService';
+import { LandingPageService } from '../../services/landing-page-service';
 
 export const AboutSection = () => {
   const hero = LandingPageService.getHero();

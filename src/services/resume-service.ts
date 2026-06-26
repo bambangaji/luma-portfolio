@@ -1,6 +1,6 @@
 import { toast } from 'sonner';
-import templateJson from '../data/templateJsonResume.json';
-import templateClassificationJson from '../data/templateJsonClassification.json';
+import templateJson from '../data/template-json-classification.json';
+import templateClassificationJson from '../data/template-json-classification.json';
 import type { PdfJson } from '../interface/resume.model';
 
 export class ResumeService {

@@ -1,11 +1,12 @@
-import { AboutSection } from '../components/sections/aboutSection';
-import { SkillsSection } from '../components/sections/skillsSection';
-import { ProjectsSection } from '../components/sections/projectsSection';
-import { ContactSection } from '../components/sections/contactSection';
+
 import { Footer } from '../components/footer';
-import { HeroSection } from '../components/sections/heroSection';
 import { useOutletContext } from 'react-router-dom';
-import { ExperienceSectionTwo } from '../components/sections/experienceSectionTwo';
+import { HeroSection } from '../components/sections/hero-section';
+import { AboutSection } from '../components/sections/about-section';
+import { SkillsSection } from '../components/sections/skills-section';
+import { ProjectsSection } from '../components/sections/projects-section';
+import { ExperienceSectionTwo } from '../components/sections/experience-section-two';
+import { ContactSection } from '../components/sections/contact-section';
 
 type ThemeContext = {
   isDark: boolean;
@@ -16,7 +17,7 @@ export const LandingPage = () => {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gray-950 text-white' : 'bg-white text-gray-900'}`}>
       <HeroSection />
-      <AboutSection />
+      <AboutSection/>
       <SkillsSection />
       <ProjectsSection/>
       {/* <ExperienceSection /> */}

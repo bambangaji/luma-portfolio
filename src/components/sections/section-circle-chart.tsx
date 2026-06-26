@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CircleChart from "../charts/circleChart";
+import CircleChart from "../charts/circle-chart";
 
 // 1️⃣ Define a type for valid chart keys
 type ChartType = "tech" | "users" | "revenue";

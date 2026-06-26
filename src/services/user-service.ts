@@ -1,4 +1,4 @@
-import type { User } from "../interface/userModel";
+import type { User } from "../interface/user-model";
 
 export const userService = {
   async fetchUsers(): Promise<User[]> {

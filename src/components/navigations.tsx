@@ -9,7 +9,6 @@ const navLinks = [
   { label: 'Projects', href: '#projects', isRoute: false },
   { label: 'Experience', href: '#experience', isRoute: false },
   { label: 'Contact', href: '#contact', isRoute: false },
-
   {
     label: 'Generate Resume',
     href: '/generate-resume',

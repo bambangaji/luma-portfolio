@@ -1,4 +1,4 @@
-import { SectionTitle } from "./sectionTitle";
+import { SectionTitle } from "./section-title";
 import { motion } from "framer-motion";
 
 export const ExperienceSection = () => {

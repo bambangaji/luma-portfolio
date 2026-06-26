@@ -2,14 +2,12 @@ import { useState } from 'react';
 
 import { toast } from 'sonner';
 
-import {
-  PdfService
-} from '../services/pdfService';
 
-import { ResumeService } from '../services/resumeService';
 import type { PdfJson } from '../interface/resume.model';
-import { JsonViewer } from '../components/context/JsonViewer';
 import { useEffect } from "react";
+import { PdfService } from '../services/pdf-service';
+import { JsonViewer } from '../components/context/json-viewer';
+import { ResumeService } from '../services/resume-service';
 
 export default function GenerateResume() {
   const [loading, setLoading] =

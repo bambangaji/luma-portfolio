@@ -1,4 +1,4 @@
-import CalendarPicker from "../charts/calendarPicker";
+import CalendarPicker from "../charts/calendar-picker";
 
 export const SectionPickCalendar = () => {
     return (

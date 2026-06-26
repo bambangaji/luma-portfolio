@@ -34,7 +34,12 @@
                 "institution": "Universitas Satya Negara Indonesia",
                 "gpa": 3.37,
                 "start_date": "Jul 2016",
-                "end_date": "Sep 2020"
+                "end_date": "Sep 2020",
+                "description": [
+                    "Graduated with a Bachelor's degree in Informatics Technology, specializing in software development and system analysis.",
+                    "Completed coursework in algorithms, data structures, database management, and web development.",
+                    "Participated in various projects and internships, gaining practical experience in full-stack development."
+                ]
             }
         ],
         "certifications": [

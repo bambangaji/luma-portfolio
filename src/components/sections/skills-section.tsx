@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { SectionTitle } from "./sectionTitle";
-import { LandingPageService } from "../../services/landingPageService";
+import { SectionTitle } from "./section-title";
+import { LandingPageService } from "../../services/landing-page-service";
 
 export const SkillsSection = () => {
   const skillSection = LandingPageService.getSkills();

@@ -1,5 +1,5 @@
-import type { PortfolioJson } from "../interface/portofolioJson.interface";
-import type { Experience, Project, ResumeJson } from "../interface/resumeJson.interface";
+import type { PortfolioJson } from "../interface/portofolio-json.interface";
+import type { Experience, Project, ResumeJson } from "../interface/resume-json.interface";
 
 export class PortfolioMappingService {
   static mapResumeToPortfolio(
@@ -130,12 +130,28 @@ export class PortfolioMappingService {
             totalSkills,
         },
       ],
-    };
+      education_section:
+        resume.education.map(
+          education => ({
+            degree:
+              education.degree,
+            institution:
+              education.institution,
+            gpa:
+              education.gpa,
+            start_date:
+              education.start_date,
+            end_date:
+              education.end_date,
+            description:
+              education.description,
+          })
+        ),
+    }
   }
-
   private static calculateSkillScore(
-    count: number
-  ): number {
+      count: number
+    ): number {
     if (count <= 3)
       return 60;
 

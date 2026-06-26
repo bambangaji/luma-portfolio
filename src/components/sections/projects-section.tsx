@@ -9,8 +9,8 @@ import {
   Workflow,
 } from 'lucide-react';
 
-import { SectionTitle } from './sectionTitle';
-import { LandingPageService } from '../../services/landingPageService';
+import { SectionTitle } from './section-title';
+import { LandingPageService } from '../../services/landing-page-service';
 
 const categoryIcons = {
   Angular: Globe,
