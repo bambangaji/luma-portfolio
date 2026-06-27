@@ -9,6 +9,11 @@ import { LandingPage } from "../pages/landing-page"
 import { BambangAjiPangestuPage } from "../pages/bambang-aji-pangestu/bambang-aji-pangestu-page"
 import GenerateResume from "../pages/generate-resume"
 import { PortfolioBuilderPage } from "../pages/portfolio-builder-page"
+import LoginPage from "../pages/auth/login-page"
+import RegisterPage from "../pages/auth/register-page"
+import ForgotPasswordPage from "../pages/auth/forgot-password-page"
+import DesignExamplePage from "../pages/examples/design-example-page"
+import AccountingExamplePage from "../pages/examples/accounting-example-page"
 
 const router = createBrowserRouter([
   {
@@ -20,6 +25,11 @@ const router = createBrowserRouter([
       { path: "about", element: <AboutPage /> },
       { path: "generate-resume", element: <GenerateResume /> },
       { path: "portofolio-editor", element: <PortfolioBuilderPage /> },
+      { path: "login", element: <LoginPage /> },
+      { path: "register", element: <RegisterPage /> },
+      { path: "forgot-password", element: <ForgotPasswordPage /> },
+      { path: "examples/design", element: <DesignExamplePage /> },
+      { path: "examples/accounting", element: <AccountingExamplePage /> },
       { path: "*", element: <NotFoundPage /> },
       { path: "search", element: <SearchPage /> },
       { path: "whatsapp", element: <WhatsappPages /> },

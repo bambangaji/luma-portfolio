@@ -36,7 +36,7 @@ export const Footer = () => {
             text-2xl font-bold text-transparent
           "
         >
-          Software Engineer
+          LUMA PORTFOLIO
         </div>
 
         {/* Copyright */}
@@ -46,7 +46,7 @@ export const Footer = () => {
             text-slate-500 dark:text-slate-500
           "
         >
-          © 2026 Software Engineer Portfolio. All rights reserved.
+          © 2026 Luma Portofolio. All rights reserved.
         </p>
 
         {/* Social Links */}

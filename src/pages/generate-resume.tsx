@@ -1,13 +1,11 @@
 import { useState } from 'react';
-
 import { toast } from 'sonner';
-
-
 import type { PdfJson } from '../interface/resume.model';
 import { useEffect } from "react";
 import { PdfService } from '../services/pdf-service';
 import { JsonViewer } from '../components/context/json-viewer';
 import { ResumeService } from '../services/resume-service';
+import { AppHeader } from '../components/app-header';
 
 export default function GenerateResume() {
   const [loading, setLoading] =
@@ -101,6 +99,7 @@ export default function GenerateResume() {
         dark:bg-gray-950
       "
     >
+      <AppHeader />
       <div
         className="
           mx-auto max-w-5xl

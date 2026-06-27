@@ -1,0 +1,94 @@
+{
+  "json": {
+    "personal_information": {
+      "full_name": "Budi Setiawan",
+      "email": "budi.setiawan@email.com",
+      "phone": "+6285678901234",
+      "location": { "city": "Surabaya", "province": "East Java", "country": "Indonesia" },
+      "description": "Certified Accountant with 7+ years of experience in financial reporting, tax compliance, and management accounting for manufacturing and retail companies. Skilled in SAP, Oracle, and data-driven financial analysis. Proven track record of reducing operational costs and improving financial accuracy through process automation and internal controls."
+    },
+    "socials": [
+      { "type": "LinkedIn", "url": "linkedin.com/in/budisetiawan-cpa", "value": "budisetiawan-cpa" },
+      { "type": "Email",    "url": "mailto:budi.setiawan@email.com",   "value": "budi.setiawan@email.com" }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Accounting",
+        "institution": "Universitas Airlangga",
+        "gpa": 3.58,
+        "start_date": "Aug 2012",
+        "end_date": "Jul 2016",
+        "description": [
+          "Majored in Accounting with specialization in Management Accounting and Auditing.",
+          "Active in accounting student association, organized annual national accounting competition.",
+          "Final thesis on the impact of internal controls on financial reporting quality."
+        ]
+      }
+    ],
+    "certifications": [
+      { "name": "Certified Public Accountant (CPA)",          "issuer": "IAPI Indonesia", "year": 2019, "description": "" },
+      { "name": "SAP Financial Accounting Certified",         "issuer": "SAP",            "year": 2020, "description": "" },
+      { "name": "Brevet A & B Tax Certification",            "issuer": "IKPI",           "year": 2017, "description": "" }
+    ],
+    "experiences": [
+      {
+        "role": "Senior Financial Accountant",
+        "company": "PT Maju Makmur Manufacturing",
+        "start_date": "Jan 2021",
+        "end_date": "Present",
+        "is_current": true,
+        "description": [
+          "Oversee monthly and annual financial closing for 3 business units with combined revenue of IDR 500B.",
+          "Reduced month-end closing time from 10 days to 5 days by automating reconciliation processes in SAP.",
+          "Lead annual external audit coordination with Big 4 accounting firms, achieving zero material findings.",
+          "Prepared consolidated financial statements in compliance with PSAK and IFRS standards.",
+          "Supervised a team of 4 junior accountants and conducted quarterly performance reviews."
+        ],
+        "technologies": ["SAP FI/CO", "Microsoft Excel", "Power BI", "Oracle"]
+      },
+      {
+        "role": "Tax & Compliance Accountant",
+        "company": "KAP Santoso & Rekan",
+        "start_date": "Aug 2016",
+        "end_date": "Dec 2020",
+        "is_current": false,
+        "description": [
+          "Filed monthly VAT and annual corporate income tax returns for 30+ client companies.",
+          "Conducted tax audit defense for 5 clients, successfully reducing assessed tax by 60%.",
+          "Performed statutory audits and financial due diligence for M&A transactions.",
+          "Trained clients on e-Filing system and DJP Online tax reporting platform."
+        ],
+        "technologies": ["e-SPT", "DJP Online", "MYOB", "Microsoft Excel"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "SAP ERP Implementation — Finance Module",
+        "description": "Led the finance module implementation of SAP S/4HANA for a 500-employee manufacturing company. Migrated 5 years of historical data, trained 20 users, and achieved go-live on schedule with 100% data accuracy.",
+        "url": "",
+        "thumbnail": "",
+        "technologies": ["SAP S/4HANA", "SAP FI/CO", "Data Migration"]
+      },
+      {
+        "title": "Automated Financial Reporting Dashboard",
+        "description": "Built a Power BI dashboard connected to SAP for real-time P&L, balance sheet, and cash flow reporting. Eliminated 40 hours/month of manual Excel reporting and reduced reporting errors by 90%.",
+        "url": "",
+        "thumbnail": "",
+        "technologies": ["Power BI", "SAP", "SQL", "Microsoft Excel"]
+      },
+      {
+        "title": "Cost Reduction Initiative — COGS Analysis",
+        "description": "Conducted detailed COGS analysis across 3 product lines, identifying IDR 2.3B in annual savings through supplier renegotiation and production process improvements.",
+        "url": "",
+        "thumbnail": "",
+        "technologies": ["Microsoft Excel", "Power BI", "SAP CO"]
+      }
+    ],
+    "skills": [
+      { "category": "Accounting & Finance", "items": ["Financial Reporting", "Management Accounting", "Cost Accounting", "IFRS", "PSAK"] },
+      { "category": "Tax & Compliance",     "items": ["Corporate Tax", "VAT", "Tax Audit", "Brevet A&B", "DJP Online"] },
+      { "category": "Tools & Systems",      "items": ["SAP FI/CO", "Oracle", "Power BI", "MYOB", "Microsoft Excel"] },
+      { "category": "Soft Skills",          "items": ["Financial Analysis", "Team Leadership", "Audit Coordination", "Process Improvement"] }
+    ]
+  }
+}

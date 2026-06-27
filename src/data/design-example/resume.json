@@ -1,0 +1,93 @@
+{
+  "json": {
+    "personal_information": {
+      "full_name": "Ayu Rahayu",
+      "email": "ayu.rahayu@email.com",
+      "phone": "+6281234567890",
+      "location": { "city": "Bandung", "province": "West Java", "country": "Indonesia" },
+      "description": "Graphic & UI/UX Designer with 5+ years crafting brand identities, digital campaigns, and user-centered interfaces. Experienced working with agencies and startups to translate business goals into compelling visual stories. Passionate about clean layouts, strong typography, and meaningful design that drives results."
+    },
+    "socials": [
+      { "type": "Behance",   "url": "behance.net/ayurahayu",   "value": "ayurahayu" },
+      { "type": "LinkedIn",  "url": "linkedin.com/in/ayurahayu", "value": "ayurahayu" },
+      { "type": "Instagram", "url": "instagram.com/ayu.designs", "value": "ayu.designs" }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Visual Communication Design",
+        "institution": "Institut Teknologi Bandung",
+        "gpa": 3.72,
+        "start_date": "Aug 2015",
+        "end_date": "Jul 2019",
+        "description": [
+          "Majored in Visual Communication Design with focus on branding and digital media.",
+          "Graduated with honours, thesis on user experience in e-commerce interfaces.",
+          "Active member of the ITB Design Community, led annual design exhibition."
+        ]
+      }
+    ],
+    "certifications": [
+      { "name": "Google UX Design Certificate", "issuer": "Google", "year": 2021, "description": "" },
+      { "name": "Adobe Certified Professional — Photoshop", "issuer": "Adobe", "year": 2020, "description": "" }
+    ],
+    "experiences": [
+      {
+        "role": "Senior UI/UX Designer",
+        "company": "Kreasi Digital Studio",
+        "start_date": "Mar 2022",
+        "end_date": "Present",
+        "is_current": true,
+        "description": [
+          "Lead design for 3 major SaaS products, improving user retention by 35% through redesigned onboarding flows.",
+          "Conduct user research, usability testing, and A/B testing to validate design decisions.",
+          "Collaborate with developers using Figma handoff and design systems to ensure pixel-perfect implementation.",
+          "Mentored 2 junior designers and established the team's design review process."
+        ],
+        "technologies": ["Figma", "Adobe XD", "Illustrator", "Photoshop", "Principle"]
+      },
+      {
+        "role": "Graphic Designer",
+        "company": "Agensi Kreatif Nusantara",
+        "start_date": "Aug 2019",
+        "end_date": "Feb 2022",
+        "is_current": false,
+        "description": [
+          "Created brand identities for 20+ clients across F&B, fashion, and tech industries.",
+          "Designed social media content calendars reaching 500K+ combined audience.",
+          "Produced print materials including packaging, brochures, and event collateral.",
+          "Won internal award for best brand refresh project (2021)."
+        ],
+        "technologies": ["Illustrator", "Photoshop", "InDesign", "Canva"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Rasa Nusantara — F&B Brand Identity",
+        "description": "Full brand identity design for a traditional Indonesian restaurant chain, including logo, color palette, packaging, and menu design. Increased brand recognition by 40% post-launch.",
+        "url": "behance.net/ayurahayu/rasa-nusantara",
+        "thumbnail": "",
+        "technologies": ["Illustrator", "Photoshop", "InDesign"]
+      },
+      {
+        "title": "PayEase — Mobile App Redesign",
+        "description": "UX audit and full redesign of a fintech mobile app. Reduced user drop-off at checkout by 28% and improved App Store rating from 3.2 to 4.6.",
+        "url": "behance.net/ayurahayu/payease",
+        "thumbnail": "",
+        "technologies": ["Figma", "Principle", "Maze"]
+      },
+      {
+        "title": "Gaya Hijab — E-Commerce Visual Campaign",
+        "description": "Designed a seasonal campaign for a modest fashion brand, producing 60+ social media assets, email templates, and banner ads that drove a 55% sales increase during Ramadan.",
+        "url": "behance.net/ayurahayu/gaya-hijab",
+        "thumbnail": "",
+        "technologies": ["Photoshop", "Illustrator", "Canva"]
+      }
+    ],
+    "skills": [
+      { "category": "UI/UX Design",    "items": ["Figma", "Adobe XD", "Wireframing", "Prototyping", "Usability Testing"] },
+      { "category": "Graphic Design",  "items": ["Illustrator", "Photoshop", "InDesign", "Typography", "Brand Identity"] },
+      { "category": "Motion & Video",  "items": ["After Effects", "Premiere Pro", "Principle"] },
+      { "category": "Soft Skills",     "items": ["Design Thinking", "Client Presentation", "Team Leadership", "Art Direction"] }
+    ]
+  }
+}
