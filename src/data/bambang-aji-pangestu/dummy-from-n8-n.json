@@ -1,0 +1,300 @@
+{
+    "json": {
+        "personal_information": {
+            "full_name": "Bambang Aji Pangestu",
+            "email": "bambangaji101@gmail.com",
+            "phone": "+6289644560019",
+            "location": {
+                "city": "Depok",
+                "province": "West Java",
+                "country": "Indonesia"
+            },
+            "description": "Full Stack Engineer with 6+ years of experience designing, developing, and optimizing enterprise-scale applications using Angular, Spring Boot, and modern web technologies. Adept at bridging front-end and back-end systems to deliver seamless, performant user experiences. Recognized for reducing technical debt, building scalable architectures, and mentoring teams through complex refactors and feature rollouts. Passionate about clean code, reusable components, and continuous improvement across the development lifecycle."
+        },
+        "socials": [
+            {
+                "type": "LinkedIn",
+                "url": "linkedin.com/in/bambang-aji-p-06371b194",
+                "value": "bambang-aji-p-06371b194"
+            },
+            {
+                "type": "GitHub",
+                "url": "github.com/bambangaji",
+                "value": "bambangaji"
+            },
+            {
+                "type": "Portfolio",
+                "url": "bambang-aji-pangestu.vercel.app",
+                "value": "bambang-aji-pangestu.vercel.app"
+            }
+        ],
+        "education": [
+            {
+                "degree": "Bachelor of Informatics Technology",
+                "institution": "Universitas Satya Negara Indonesia",
+                "gpa": 3.37,
+                "start_date": "Jul 2016",
+                "end_date": "Sep 2020",
+                "description": [
+                    "Graduated with a Bachelor's degree in Informatics Technology, specializing in software development and system analysis.",
+                    "Completed coursework in algorithms, data structures, database management, and web development.",
+                    "Participated in various projects and internships, gaining practical experience in full-stack development."
+                ]
+            }
+        ],
+        "certifications": [
+            {
+                "name": "Internet of Things",
+                "issuer": "Google",
+                "year": 2019,
+                "description": ""
+            },
+            {
+                "name": "Mobile Web Specialist",
+                "issuer": "Google",
+                "year": 2018,
+                "description": ""
+            }
+        ],
+        "experiences": [
+            {
+                "role": "Mobile Developer",
+                "company": "PT Asuransi Jiwa Astra",
+                "start_date": "Sep 2023",
+                "end_date": "Mar 2024",
+                "is_current": false,
+                "description": [
+                    "Develop payment service (DOKU) in application mobile sales tools Android & IOS with angular.js and cordova.",
+                    "Implemented SDX methods to facilitate seamless data integration and synchronization across diverse systems and platforms, improving data transfer efficiency by twenty percent.",
+                    "Engaged in sprint planning and retrospectives, helping the team achieve a consistent velocity and timely delivery of features.",
+                    "Develop project integrated with Bank BJJ to add feature on existing application sales tools."
+                ],
+                "technologies": [
+                    "Angular.js",
+                    "cordova"
+                ]
+            },
+            {
+                "role": "Front End Web Engineer",
+                "company": "PT Rpay Finansial Digital Indonesia",
+                "start_date": "Jan 2023",
+                "end_date": "Aug 2023",
+                "is_current": false,
+                "description": [
+                    "Develop Web back office using vue.js with pattern MVC.",
+                    "Perform code reviews and contribute ideas to improve the quality. Create feature convert excel to image then compress image to .zip",
+                    "Improve some feature existing like bank management , verification KYC and etc.",
+                    "Designed and implemented API integrations to interact with external systems and services, ensuring efficient data exchange and real-time updates.",
+                    "Contributed to the adoption of modern development tools, reducing the time required for new feature implementation by 20%."
+                ],
+                "technologies": [
+                    "vue.js"
+                ]
+            },
+            {
+                "role": "Front End Engineer",
+                "company": "PT Bank Danamon Indonesia Tbk",
+                "start_date": "May 2024",
+                "end_date": "May 2025",
+                "is_current": false,
+                "description": [
+                    "Developed ,Fixing major error existing and implemented a new features live video call with agent on mobile credit card bank , resulting in a 15% increase in user engagement.",
+                    "Migrate project code from angular 11 to angular 19.",
+                    "Developed a new features sales login for an existing web credit card bank, enhancing user engagement by 25%.",
+                    "Implemented a modular and microsite apps architecture using angular and making maintenance easier for future developers.",
+                    "Applied Agile methodology in iterating the SRS document to ensure alignment with evolving business requirements.",
+                    "Traced and analyzed business workflow via SQL by querying audit trail ,Integration and status logs to identify bottlenecks and support root cause analysis.",
+                    "Improved team collaboration and knowledge sharing in an Agile environment by introducing collaborative tools and conducting regular knowledge-sharing sessions, resulting in a 30% decrease in siloed work."
+                ],
+                "technologies": [
+                    "Angular"
+                ]
+            },
+            {
+                "role": "Mobile Developer",
+                "company": "PT Asuransi Jiwa Astra",
+                "start_date": "Dec 2025",
+                "end_date": "Present",
+                "is_current": true,
+                "description": [
+                    "Implemented SDX methods to facilitate seamless data integration and synchronization across diverse systems and platforms, improving data transfer efficiency by twenty percent.",
+                    "Engaged in sprint planning and retrospectives, helping the team achieve a consistent velocity and timely delivery of features.",
+                    "Refactored legacy data structures into standardized formats to enhance maintainability and system performance."
+                ],
+                "technologies": []
+            },
+            {
+                "role": "IT Developer",
+                "company": "PT Sompo Insurance",
+                "start_date": "Jun 2025",
+                "end_date": "Dec 2025",
+                "is_current": false,
+                "description": [
+                    "Refactored and modularized a 7,000+ line Angular legacy codebase into ~500 lines, building shared UI components and dynamic interfaces that improved maintainability and reduced development time.",
+                    "Built and integrated Spring Boot REST APIs to support new front-end modules and internal dashboards, improving performance and data flow consistency.",
+                    "Designed a dynamic UI rendering system that handled multiple layouts from a single configuration, cutting repetitive code and boosting feature delivery speed.",
+                    "Led a small front-end team, organizing daily tasks and progress tracking through self-managed documentation and stand-ups, ensuring alignment despite the absence of formal tools like Jira."
+                ],
+                "technologies": [
+                    "Angular",
+                    "Spring Boot"
+                ]
+            },
+            {
+                "role": "Software Engineer",
+                "company": "PT REDPHOENIX KREATIF DIGITAL",
+                "start_date": "Mar 2021",
+                "end_date": "Dec 2021",
+                "is_current": false,
+                "description": [
+                    "Writing app skeleton to be used by other developer with pattern MVVM.",
+                    "Create an SRS to develop a system architecture focused on modularity, maintainability, and flexibility, allowing the software to adapt to changing user needs and technology.",
+                    "Create digital e‑materai application and release to playstore.",
+                    "Implemented SDX (Service Data eXchange) methods to facilitate seamless data integration, synchronization, and service orchestration across diverse systems and platforms."
+                ],
+                "technologies": []
+            },
+            {
+                "role": "Front End Engineer",
+                "company": "PT WISATECH",
+                "start_date": "Dec 2019",
+                "end_date": "Dec 2020",
+                "is_current": false,
+                "description": [
+                    "Integrated existing system with zoom and system education moodle.",
+                    "Create API education to be used by other developer.",
+                    "Create scheduler feature using microsoft calendar based existing project.",
+                    "Resolved a major security vulnerability by applying input validation and sanitization, preventing potential data breaches and safeguarding user information."
+                ],
+                "technologies": []
+            },
+            {
+                "role": "Front End Engineer",
+                "company": "PT MEEBER",
+                "start_date": "",
+                "end_date": "",
+                "is_current": false,
+                "description": [
+                    "Create feature reservation and home cooking using ionic angular and flutter.",
+                    "Improve some reporting existing system and integration with API.",
+                    "Developed data transformation logic and synchronization mechanisms to handle data consistency, format conversions, and error handling during API interactions."
+                ],
+                "technologies": [
+                    "ionic",
+                    "angular",
+                    "flutter"
+                ]
+            }
+        ],
+        "projects": [
+            {
+                "title": "Khastara",
+                "description": "Spearheaded the Front-End team in driving Agile sprints, utilizing Jira to streamline project management and optimize team collaboration.",
+                "url": "",
+                "thumbnail": "",
+                "technologies": []
+            },
+            {
+                "title": "Web profile",
+                "description": "Developed a responsive corporate web profile using WordPress and Elementor, customizing a ThemeForest template to align with brand identity and user experience goals.",
+                "url": "",
+                "thumbnail": "",
+                "technologies": [
+                    "WordPress",
+                    "Elementor"
+                ]
+            },
+            {
+                "title": "Web profile corporate",
+                "description": "Developed a corporate web profile using WordPress with Elementor, customizing a premium ThemeForest theme to align with the company’s branding and professional standards.",
+                "url": "",
+                "thumbnail": "",
+                "technologies": [
+                    "WordPress",
+                    "Elementor"
+                ]
+            },
+            {
+                "title": "Rusunami web apartment",
+                "description": "Designed and implemented a dynamic web profile template using WordPress and Elementor, customized from a premium ThemeForest theme to meet branding and user experience goals.",
+                "url": "",
+                "thumbnail": "",
+                "technologies": [
+                    "WordPress",
+                    "Elementor"
+                ]
+            }
+        ],
+        "skills": [
+            {
+                "category": "Back End",
+                "items": [
+                    "PHP",
+                    "Go",
+                    ".Net",
+                    "Spring boot"
+                ]
+            },
+            {
+                "category": "Database",
+                "items": [
+                    "PostgreeSQL",
+                    "Firebase",
+                    "MYSQLI",
+                    "SQL Server",
+                    "MariaDb"
+                ]
+            },
+            {
+                "category": "Front End",
+                "items": [
+                    "HTML",
+                    "CSS",
+                    "JS",
+                    "TS",
+                    "Vue Js",
+                    "Angular JS",
+                    "Angular",
+                    "Flutter",
+                    "Ionic",
+                    "React Js",
+                    "Kotlin Compose"
+                ]
+            },
+            {
+                "category": "AI",
+                "items": [
+                    "AI Workflow Automation (n8n)",
+                    "LLaMA Model Integration",
+                    "API Integration"
+                ]
+            },
+            {
+                "category": "CI/CD",
+                "items": [
+                    "Github",
+                    "Gitlab",
+                    "Jenkins",
+                    "Bitbucket"
+                ]
+            },
+            {
+                "category": "Documentation",
+                "items": [
+                    "Software Requirements Specification",
+                    "Technical Documentation",
+                    "Business Requirement Analysis"
+                ]
+            },
+            {
+                "category": "Deployment",
+                "items": [
+                    "AWS",
+                    "Google Cloud Platform",
+                    "CI/CD Deployment via Remote Servers using MobaXterm (SSH)"
+                ]
+            }
+        ]
+    },
+    "success": true
+}

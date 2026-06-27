@@ -147,6 +147,30 @@ export class PortfolioSanitizerService {
             ) || 0,
         },
       ],
+
+      education_section: Array.isArray(
+        data.education_section
+      )
+        ? data.education_section.map(
+            (edu: any) => ({
+              degree:
+                edu.degree ?? '',
+              institution:
+                edu.institution ?? '',
+              gpa:
+                edu.gpa ?? null,
+              start_date:
+                edu.start_date ?? null,
+              end_date:
+                edu.end_date ?? null,
+              description: Array.isArray(
+                edu.description
+              )
+                ? edu.description
+                : [],
+            })
+          )
+        : [],
     };
   }
 }

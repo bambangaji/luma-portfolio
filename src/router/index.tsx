@@ -6,6 +6,7 @@ import SearchPage from "../pages/searching-page"
 import ItemDetailPage from "../pages/item/item-detail-page"
 import WhatsappPages from "../pages/whatsapp/whatsapp-page"
 import { LandingPage } from "../pages/landing-page"
+import { BambangAjiPangestuPage } from "../pages/bambang-aji-pangestu/bambang-aji-pangestu-page"
 import GenerateResume from "../pages/generate-resume"
 import { PortfolioBuilderPage } from "../pages/portfolio-builder-page"
 
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <LandingPage/> },
+      { index: true, element: <LandingPage /> },
+      { path: "bambang-aji-pangestu", element: <BambangAjiPangestuPage /> },
       { path: "about", element: <AboutPage /> },
       { path: "generate-resume", element: <GenerateResume /> },
       { path: "portofolio-editor", element: <PortfolioBuilderPage /> },
