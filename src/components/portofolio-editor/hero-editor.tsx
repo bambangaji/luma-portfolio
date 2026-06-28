@@ -1,4 +1,5 @@
 import type { ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AccordionSection } from './accordion-sections';
 import { usePortfolioStore } from '../../store/portfolio.store';
 
@@ -16,6 +17,7 @@ export const HeroEditor = () => {
     }
 
     const hero = portfolio.hero;
+    const { t } = useTranslation();
 
     const updateField = (
         field: keyof typeof hero,
@@ -42,7 +44,7 @@ export const HeroEditor = () => {
 
     return (
         <AccordionSection
-            title="About"
+            title={t('editor_about')}
         >
             <div className="space-y-5">
                 {/* Badge */}
@@ -56,7 +58,7 @@ export const HeroEditor = () => {
               dark:text-slate-300
             "
                     >
-                        Badge
+                        {t('editor_field_badge')}
                     </label>
 
                     <input
@@ -98,7 +100,7 @@ export const HeroEditor = () => {
               dark:text-slate-300
             "
                     >
-                        Headline
+                        {t('editor_field_headline')}
                     </label>
 
                     <input
@@ -141,7 +143,7 @@ export const HeroEditor = () => {
                 dark:text-slate-300
               "
                         >
-                            Title Prefix
+                            {t('editor_field_title_prefix')}
                         </label>
 
                         <input
@@ -179,7 +181,7 @@ export const HeroEditor = () => {
               dark:text-slate-300
               "
                         >
-                            Title Highlight
+                            {t('editor_field_title_highlight')}
                         </label>
 
                         <input
@@ -219,7 +221,7 @@ export const HeroEditor = () => {
               dark:text-slate-300
             "
                     >
-                        Description
+                        {t('editor_field_description')}
                     </label>
 
                     <textarea
@@ -259,7 +261,7 @@ export const HeroEditor = () => {
               dark:text-slate-300
             "
                     >
-                        Short Description
+                        {t('editor_field_short_description')}
                     </label>
 
                     <textarea

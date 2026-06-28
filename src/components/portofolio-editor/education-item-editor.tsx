@@ -1,7 +1,6 @@
 import { Trash2, Plus } from 'lucide-react';
-
+import { useTranslation } from 'react-i18next';
 import { AccordionSection } from './accordion-sections';
-
 import { usePortfolioStore } from '../../store/portfolio.store';
 import { DatePickerField } from '../picker/date-picker-field';
 
@@ -33,8 +32,8 @@ export const EducationItemEditor = ({
     return null;
   }
 
-  const education =
-    portfolio.education_section[index];
+  const education = portfolio.education_section[index];
+  const { t } = useTranslation();
 
   const updateEducation = (
     field: keyof Education,
@@ -109,7 +108,7 @@ export const EducationItemEditor = ({
     <AccordionSection
       title={
         education.degree ||
-        'New Education'
+        t('editor_label_new_education')
       }
       subtitle={
         education.institution
@@ -120,7 +119,7 @@ export const EducationItemEditor = ({
         <div className="grid gap-4 md:grid-cols-2">
           <div>
             <label className="mb-2 block text-sm font-medium text-slate-500 dark:text-white">
-              Degree
+              {t('editor_field_degree')}
             </label>
 
             <input
@@ -139,7 +138,7 @@ export const EducationItemEditor = ({
 
           <div>
             <label className="mb-2 block text-sm font-medium text-slate-500 dark:text-white">
-              Institution
+              {t('editor_field_institution')}
             </label>
 
             <input
@@ -158,7 +157,7 @@ export const EducationItemEditor = ({
 
           <div>
             <label className="mb-2 block text-sm font-medium text-slate-500 dark:text-white">
-              GPA
+              {t('editor_field_gpa')}
             </label>
 
             <input
@@ -184,10 +183,8 @@ export const EducationItemEditor = ({
 
         <div className="grid gap-4 md:grid-cols-2">
           <DatePickerField
-            label="Start Date"
-            value={
-              education.start_date
-            }
+            label={t('editor_field_start_date')}
+            value={education.start_date}
             onChange={value =>
               updateEducation(
                 'start_date',
@@ -197,10 +194,8 @@ export const EducationItemEditor = ({
           />
 
           <DatePickerField
-            label="End Date"
-            value={
-              education.end_date
-            }
+            label={t('editor_field_end_date')}
+            value={education.end_date}
             onChange={value =>
               updateEducation(
                 'end_date',
@@ -213,7 +208,7 @@ export const EducationItemEditor = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h4 className="font-semibold text-slate-500 dark:text-white">
-              Description
+              {t('editor_field_description')}
             </h4>
 
             <button
@@ -282,9 +277,8 @@ export const EducationItemEditor = ({
             dark:border-gray-700
             dark:bg-gray-800
             border-gray-7000
-            border"
-        >
-          Delete Education
+            border">
+          {t('editor_btn_delete_education')}
         </button>
       </div>
     </AccordionSection>

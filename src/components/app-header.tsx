@@ -14,9 +14,8 @@ export const AppHeader = () => {
 
   return (
     <motion.header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'border-b border-white/10 bg-white/80 shadow-sm backdrop-blur-xl dark:bg-gray-950/80' : 'bg-transparent'
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-white/10 bg-white/80 shadow-sm backdrop-blur-xl dark:bg-gray-950/80' : 'bg-transparent'
+        }`}
       initial={{ y: -60, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -38,12 +37,12 @@ export const AppHeader = () => {
               Sign In
             </motion.span>
           </Link>
-          <Link to="/register">
+          {/* <Link to="/register">
             <motion.span whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
               className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white shadow-md">
               <Sparkles size={14} /> Register
             </motion.span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </motion.header>

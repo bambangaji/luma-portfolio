@@ -1,12 +1,7 @@
 import { useState } from 'react';
-
-import {
-  Plus,
-  Trash2,
-} from 'lucide-react';
-
+import { Plus, Trash2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { AccordionSection } from './accordion-sections';
-
 import { usePortfolioStore } from '../../store/portfolio.store';
 
 interface Props {
@@ -39,6 +34,8 @@ export const ProjectItemEditor = ({
     newTechnology,
     setNewTechnology,
   ] = useState('');
+
+  const { t } = useTranslation();
 
   const updateProject = (
     field: string,
@@ -89,7 +86,7 @@ export const ProjectItemEditor = ({
     <AccordionSection
       title={
         project.title ||
-        'New Project'
+        t('editor_label_new_project')
       }
       subtitle={`${project.technologies.length} Technologies`}
       defaultOpen={false}
@@ -109,7 +106,7 @@ export const ProjectItemEditor = ({
               dark:text-white
             "
           >
-            Project Title
+            {t('editor_field_project_title')}
           </label>
 
           <input
@@ -154,7 +151,7 @@ export const ProjectItemEditor = ({
               
             "
           >
-            Description
+            {t('editor_field_description')}
           </label>
 
           <textarea
@@ -199,7 +196,7 @@ export const ProjectItemEditor = ({
               dark:text-white
             "
           >
-            Project URL
+            {t('editor_field_project_url')}
           </label>
 
           <input
@@ -242,7 +239,7 @@ export const ProjectItemEditor = ({
               dark:text-white
             "
           >
-            Thumbnail URL
+            {t('editor_field_thumbnail_url')}
           </label>
 
           <input
@@ -308,7 +305,7 @@ export const ProjectItemEditor = ({
               dark:text-white
             "
           >
-            Technologies
+            {t('editor_field_technologies')}
           </label>
 
           <div
@@ -457,7 +454,7 @@ export const ProjectItemEditor = ({
             border
           "
         >
-          Delete Project
+          {t('editor_btn_delete_project')}
         </button>
       </div>
     </AccordionSection>

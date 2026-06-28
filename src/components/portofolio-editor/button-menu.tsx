@@ -4,10 +4,12 @@ import {
   Save,
   Sparkles,
 } from 'lucide-react';
-
 import Swal from 'sweetalert2';
+import { useTranslation } from 'react-i18next';
 
 export const ButtonMenuPortfolio = () => {
+  const { t } = useTranslation();
+
   const simulateApi = async (
     title: string,
     success: string
@@ -18,7 +20,7 @@ export const ButtonMenuPortfolio = () => {
         <div class="py-4">
           <div class="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-violet-500 border-t-transparent"></div>
           <p class="mt-4 text-sm text-slate-500">
-            Please wait...
+            ${t('btn_menu_please_wait')}
           </p>
         </div>
       `,
@@ -42,8 +44,8 @@ export const ButtonMenuPortfolio = () => {
     async () => {
       // TODO: await PortfolioApiService.analyze(...)
       await simulateApi(
-        'Analyzing Resume...',
-        'Resume analyzed successfully.'
+        t('btn_menu_analyze_loading'),
+        t('btn_menu_analyze_success')
       );
     };
 
@@ -59,8 +61,8 @@ export const ButtonMenuPortfolio = () => {
     async () => {
       // TODO: await PortfolioApiService.saveATS(...)
       await simulateApi(
-        'Saving ATS Resume...',
-        'ATS Resume saved successfully.'
+        t('btn_menu_save_ats_loading'),
+        t('btn_menu_save_ats_success')
       );
     };
 
@@ -68,8 +70,8 @@ export const ButtonMenuPortfolio = () => {
     async () => {
       // TODO: await PortfolioApiService.deploy(...)
       await simulateApi(
-        'Deploying Portfolio...',
-        'Portfolio deployed successfully.'
+        t('btn_menu_deploy_loading'),
+        t('btn_menu_deploy_success')
       );
     };
 
@@ -104,7 +106,7 @@ export const ButtonMenuPortfolio = () => {
               dark:text-white
             "
           >
-            Portfolio Builder
+            {t('btn_menu_title')}
           </h1>
 
           <p
@@ -117,7 +119,7 @@ export const ButtonMenuPortfolio = () => {
               dark:text-slate-400
             "
           >
-            Customize your portfolio, preview changes, and publish when you're ready.
+            {t('btn_menu_desc')}
           </p>
         </div>
 
@@ -161,7 +163,7 @@ export const ButtonMenuPortfolio = () => {
             "
           >
             <Sparkles size={18} />
-            Analyze Resume
+            {t('btn_menu_analyze')}
           </button>
 
           <button
@@ -196,7 +198,7 @@ export const ButtonMenuPortfolio = () => {
             "
           >
             <Eye size={18} />
-            Preview
+            {t('btn_menu_preview')}
           </button>
 
           <button
@@ -230,7 +232,7 @@ export const ButtonMenuPortfolio = () => {
             "
           >
             <Save size={18} />
-            Save ATS
+            {t('btn_menu_save_ats')}
           </button>
 
           <button
@@ -264,7 +266,7 @@ export const ButtonMenuPortfolio = () => {
             "
           >
             <Rocket size={18} />
-            Deploy
+            {t('btn_menu_deploy')}
           </button>
         </div>
       </div>

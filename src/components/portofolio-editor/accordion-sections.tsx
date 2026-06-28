@@ -26,14 +26,15 @@ export const AccordionSection = ({
         rounded-2xl
 
         border
-        border-gray-200
+        border-gray-200/60
 
-        bg-white
+        bg-white/80
+        backdrop-blur-xl
 
         shadow-sm
 
-        dark:border-gray-800
-        dark:bg-gray-900
+        dark:border-gray-800/60
+        dark:bg-gray-900/80
       "
         >
             <button
@@ -44,12 +45,13 @@ export const AccordionSection = ({
     items-center
     justify-between
 
-    px-4
-    py-3
+    px-5
+    py-4
 
-    hover:bg-gray-50
+    transition-colors
+    hover:bg-gray-50/50
 
-    dark:hover:bg-gray-800/50
+    dark:hover:bg-gray-800/30
   "
             >
                 <div
@@ -61,7 +63,7 @@ export const AccordionSection = ({
                 >
                     <h3
                         className="
-        text-sm
+        text-base
         font-semibold
 
         text-slate-900
@@ -121,11 +123,11 @@ export const AccordionSection = ({
                             className="
                 border-t
 
-                border-gray-100
+                border-gray-100/50
 
-                p-5
+                p-6
 
-                dark:border-gray-800
+                dark:border-gray-800/50
               "
                         >
                             {children}

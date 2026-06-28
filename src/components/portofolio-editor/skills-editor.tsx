@@ -1,6 +1,6 @@
 import { AccordionSection } from './accordion-sections';
 import { SkillCategoryEditor } from './skills-category-editor';
-
+import { useTranslation } from 'react-i18next';
 import { usePortfolioStore } from '../../store/portfolio.store';
 
 export const SkillsEditor = () => {
@@ -18,8 +18,9 @@ export const SkillsEditor = () => {
     return null;
   }
 
-  const skillSection =
-    portfolio.skill_section;
+  const { t } = useTranslation();
+
+  const skillSection = portfolio.skill_section;
 
   const addCategory = () => {
     updatePortfolio({
@@ -41,8 +42,8 @@ export const SkillsEditor = () => {
 
   return (
     <AccordionSection
-      title="Skills"
-      subtitle={`${skillSection.categories.length} Categories`}
+      title={t('editor_skills')}
+      subtitle={t('editor_categories', { count: skillSection.categories.length })}
     >
       <div className="space-y-4">
         {skillSection.categories.map(
@@ -61,23 +62,16 @@ export const SkillsEditor = () => {
         <button
           onClick={addCategory}
           className="
-            rounded-xl
-
-            border
-            border-dashed
-
-            px-4
-            py-3
-
-            text-sm
-            font-medium
-            dark:text-white
-            hover:bg-gray-50
-
-            dark:hover:bg-gray-800
+            flex w-full items-center justify-center gap-2
+            rounded-xl border-2 border-dashed
+            border-violet-200 bg-violet-50/50
+            px-4 py-4 text-sm font-semibold text-violet-600
+            transition-colors hover:bg-violet-100 hover:border-violet-300
+            dark:border-violet-500/30 dark:bg-violet-500/10
+            dark:text-violet-400 dark:hover:bg-violet-500/20
           "
         >
-          + Add Category
+          {t('editor_btn_add_category')}
         </button>
       </div>
     </AccordionSection>

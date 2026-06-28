@@ -1,12 +1,7 @@
 import { useState } from 'react';
-
-import {
-  Plus,
-  Trash2,
-} from 'lucide-react';
-
+import { Plus, Trash2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { AccordionSection } from './accordion-sections';
-
 import { usePortfolioStore } from '../../store/portfolio.store';
 import { DatePickerField } from '../picker/date-picker-field';
 
@@ -39,6 +34,8 @@ export const ExperienceItemEditor = ({
     newTechnology,
     setNewTechnology,
   ] = useState('');
+
+  const { t } = useTranslation();
 
   const updateExperience =
     (
@@ -119,7 +116,7 @@ export const ExperienceItemEditor = ({
     <AccordionSection
       title={
         experience.role ||
-        'New Experience'
+        t('editor_label_new_experience')
       }
       subtitle={
         experience.company
@@ -198,7 +195,7 @@ export const ExperienceItemEditor = ({
       dark:text-white
     "
           >
-            Employment Period
+            {t('editor_field_employment_period')}
           </div>
 
           <div
@@ -209,10 +206,8 @@ export const ExperienceItemEditor = ({
     "
           >
             <DatePickerField
-              label="Start Date"
-              value={
-                experience.start_date
-              }
+              label={t('editor_field_start_date')}
+              value={experience.start_date}
               onChange={value =>
                 updateExperience(
                   'start_date',
@@ -234,7 +229,7 @@ export const ExperienceItemEditor = ({
             dark:text-white
           "
                 >
-                  End Date
+                  {t('editor_field_end_date')}
                 </label>
 
                 <div
@@ -320,8 +315,8 @@ export const ExperienceItemEditor = ({
       `}
             >
               {experience.is_current
-                ? '✓ Current Position'
-                : 'Set as Current Position'}
+                ? t('editor_btn_current_active')
+                : t('editor_btn_set_current')}
             </button>
           </div>
         </div>
@@ -360,7 +355,7 @@ export const ExperienceItemEditor = ({
               dark:text-white
             "
           >
-            Technologies
+            {t('editor_field_technologies')}
           </h4>
 
           <div
@@ -479,7 +474,7 @@ export const ExperienceItemEditor = ({
               dark:text-white
             "
           >
-            Responsibilities
+            {t('editor_field_responsibilities')}
           </h4>
 
           <div className="space-y-2">
@@ -621,7 +616,7 @@ export const ExperienceItemEditor = ({
             border
           "
         >
-          Delete Experience
+          {t('editor_btn_delete_experience')}
         </button>
       </div>
     </AccordionSection>

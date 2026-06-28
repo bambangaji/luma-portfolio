@@ -1,12 +1,7 @@
 import { useState } from 'react';
-
-import {
-  Trash2,
-  Plus,
-} from 'lucide-react';
-
+import { Trash2, Plus } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { AccordionSection } from './accordion-sections';
-
 import { usePortfolioStore } from '../../store/portfolio.store';
 
 interface Props {
@@ -23,8 +18,8 @@ export const SkillCategoryEditor = ({
   category,
   index,
 }: Props) => {
-  const [newSkill, setNewSkill] =
-    useState('');
+  const [newSkill, setNewSkill] = useState('');
+  const { t } = useTranslation();
 
   const portfolio =
     usePortfolioStore(
@@ -150,7 +145,7 @@ export const SkillCategoryEditor = ({
       title={
         category.category
       }
-      subtitle={`${category.items.length} Skills`}
+      subtitle={t('editor_skills_count', { count: category.items.length })}
       defaultOpen={false}
     >
       <div className="space-y-5">
@@ -165,7 +160,7 @@ export const SkillCategoryEditor = ({
               text-slate-500
             "
           >
-            Category Name
+            {t('editor_field_category_name')}
           </label>
 
           <input
@@ -203,7 +198,7 @@ export const SkillCategoryEditor = ({
             "
           >
             <span className="text-sm font-medium dark:text-white text-slate-500">
-              Score
+              {t('editor_field_score')}
             </span>
 
             <span className="text-sm  dark:text-white text-slate-500"> 
@@ -249,7 +244,7 @@ export const SkillCategoryEditor = ({
               text-slate-500
             "
           >
-            Skills
+            {t('editor_field_skills')}
           </label>
 
           <div
@@ -376,7 +371,7 @@ export const SkillCategoryEditor = ({
             border
           "
         >
-          Delete Category
+          {t('editor_btn_delete_category')}
         </button>
       </div>
     </AccordionSection>
