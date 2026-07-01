@@ -52,6 +52,7 @@ export const EducationEditor = () => {
             <EducationItemEditor
               key={index}
               index={index}
+              initialEducation={education}
             />
           )
         )}

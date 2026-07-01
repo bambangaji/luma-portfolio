@@ -15,7 +15,6 @@ export default function App() {
   }, [isDark]);
 
   const location = useLocation();
-  const isLanding = location.pathname === '/';
   const showNav = ['/bambang-aji-pangestu', '/examples/design', '/examples/accounting'].includes(location.pathname);
 
   return (

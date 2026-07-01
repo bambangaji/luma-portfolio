@@ -1,7 +1,5 @@
 import { create } from 'zustand';
 
-import dummyPortfolio from '../data/template-json-classification.json';
-
 import type { PortfolioJson } from '../interface/portofolio-json.interface';
 import { LandingPageService } from '../services/landing-page-service';
 

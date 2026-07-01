@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ExperienceEditor } from "../components/portofolio-editor/experience-editor";
 import { HeroEditor } from "../components/portofolio-editor/hero-editor";
@@ -10,7 +9,6 @@ import { CvSummaryEditor } from "../components/portofolio-editor/cv-summary-edit
 import { AppHeader } from "../components/app-header";
 
 export const PortfolioBuilderPage = () => {
-  const navigate = useNavigate();
 
   return (
     <div className="relative min-h-screen w-full bg-slate-50 font-sans selection:bg-violet-200 dark:bg-gray-950 dark:selection:bg-violet-900/50">

@@ -1,7 +1,6 @@
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
 import { AppHeader } from '../components/app-header';
 import {
   Sparkles, Rocket, Eye, Pencil, Cpu,
@@ -33,7 +32,6 @@ const FIELDS: { label: string; href?: string }[] = [
 
 export const LandingPage = () => {
   const { t } = useTranslation();
-  const { scrollY } = useScroll();
 
   const steps = [
     { icon: Upload, label: t('step1_label'), desc: t('step1_desc') },

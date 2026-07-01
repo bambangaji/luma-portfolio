@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../../store/store";
-import { fetchUsers } from "../../store/userSlice";
+import { fetchUsers } from "../../store/user-slice";
 
 export default function UserList() {
   const dispatch = useDispatch<AppDispatch>();

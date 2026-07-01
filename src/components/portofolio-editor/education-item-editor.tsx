@@ -15,10 +15,12 @@ interface Education {
 
 interface Props {
   index: number;
+  initialEducation?: Education;
 }
 
 export const EducationItemEditor = ({
   index,
+  initialEducation: initialEducation,
 }: Props) => {
   const portfolio = usePortfolioStore(
     state => state.portfolio
@@ -31,7 +33,7 @@ export const EducationItemEditor = ({
   if (!portfolio) {
     return null;
   }
-
+  console.log('portfolio.education_section[index]', initialEducation);
   const education = portfolio.education_section[index];
   const { t } = useTranslation();
 

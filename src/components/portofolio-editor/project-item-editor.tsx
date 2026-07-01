@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Trash2 } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { AccordionSection } from './accordion-sections';
 import { usePortfolioStore } from '../../store/portfolio.store';
