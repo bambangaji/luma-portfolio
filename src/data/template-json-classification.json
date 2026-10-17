@@ -1,94 +1,33 @@
 {
   "json": {
     "hero": {
-      "badge": "Software Engineer",
-      "headline": "Software Engineer with 5 years of experience in web development",
+      "badge": "",
+      "headline": "",
       "title": {
-        "prefix": "My Engineering",
-        "highlight": "Portfolio"
+        "prefix": "",
+        "highlight": ""
       },
-      "description": "Passionate about building impactful applications and enhancing user experiences."
+      "description": ""
     },
     "skills": {
-      "title": "Skills & Expertise",
-      "subtitle": "Expert in web development, databases, and agile methodologies.",
-      "categories": [
-        {
-          "name": "Web Development",
-          "score": 90,
-          "items": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React"
-          ]
-        },
-        {
-          "name": "Database Management",
-          "score": 75,
-          "items": [
-            "MySQL",
-            "MongoDB"
-          ]
-        },
-        {
-          "name": "Project Management",
-          "score": 75,
-          "items": [
-            "Agile",
-            "Scrum"
-          ]
-        }
-      ]
+      "title": "",
+      "subtitle": "",
+      "categories": []
     },
     "experience": {
-      "title": "Work Experience",
-      "items": [
-        {
-          "company": "Web Solutions Inc.",
-          "position": "Software Engineer",
-          "start_date": "2018-08-01",
-          "end_date": "Present",
-          "description": "Developing web applications and collaborating with cross-functional teams."
-        },
-        {
-          "company": "Tech Innovations",
-          "position": "Junior Developer",
-          "start_date": "2016-06-01",
-          "end_date": "2018-07-31",
-          "description": "Assisted in software development and testing for various projects."
-        }
-      ]
+      "title": "",
+      "items": []
     },
     "projects": {
-      "title": "Featured Projects",
-      "filters": [
-        "HTML",
-        "JavaScript",
-        "MongoDB",
-        "React"
-      ],
-      "items": [
-        {
-          "name": "Personal Portfolio",
-          "description": "A portfolio website showcasing my work and projects."
-        },
-        {
-          "name": "E-commerce Site",
-          "description": "An online platform for buying and selling products."
-        },
-        {
-          "name": "Task Management App",
-          "description": "A web application for managing tasks and projects."
-        }
-      ]
+      "title": "",
+      "filters": [],
+      "items": []
     },
     "stats": {
-      "years_experience": 7,
-      "projects": 3,
-      "companies": 2,
-      "skills": 9
+      "years_experience": 0,
+      "projects": 0,
+      "companies": 0,
+      "skills": 0
     }
-  },
-  "success": true
+  }
 }

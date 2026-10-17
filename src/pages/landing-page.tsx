@@ -102,7 +102,7 @@ export const LandingPage = () => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.65 }}
             className="flex flex-wrap justify-center gap-4">
-            <Link to="/register">
+            <Link to="/generate-resume">
               <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}
                 className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 px-9 py-4 text-base font-bold text-white shadow-lg shadow-violet-500/30 transition-all">
                 <Sparkles size={18} /> {t('btn_generate')}
@@ -313,7 +313,7 @@ export const LandingPage = () => {
             <h2 className="text-3xl font-extrabold">{t('cta_title')}</h2>
             <p className="mt-4 text-lg text-white/75">{t('cta_sub')}</p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Link to="/register">
+              <Link to="/generate-resume">
                 <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}
                   className="inline-flex items-center gap-2 rounded-2xl bg-white px-9 py-4 font-bold text-violet-600 shadow-xl transition-all">
                   <Sparkles size={18} /> {t('btn_generate')}

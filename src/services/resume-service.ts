@@ -1,5 +1,5 @@
 import { toast } from 'sonner';
-import templateJson from '../data/template-json-classification.json';
+import templateJson from '../data/template-json-resume.json';
 import templateClassificationJson from '../data/template-json-classification.json';
 import type { PdfJson } from '../interface/resume.model';
 
